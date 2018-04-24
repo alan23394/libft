@@ -6,12 +6,98 @@
 /*   By: abarnett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/17 14:19:41 by abarnett          #+#    #+#             */
-/*   Updated: 2018/04/21 07:23:46 by abarnett         ###   ########.fr       */
+/*   Updated: 2018/04/23 17:20:57 by abarnett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "debug.h"
 #include "libft.h"
+#include <string.h>
+#include <stdio.h>
+#include <unistd.h>
+
+void	check_bzero()
+{
+	char	*str;
+	char	nstr[8] = {3, 3, 3, 3, 3, 3, 3, 3};
+	int		i;
+
+	ft_putstr("ft_bzero:\n");
+	str = malloc(8 * sizeof(char));
+	bzero(str, 8);
+	ft_bzero(nstr, 4);
+	str[4] = 5;
+	i = 0;
+	while (i < 8)
+	{
+		ft_putchar(nstr[i] + '0');
+		ft_putstr(", ");
+		ft_putchar(str[i] + '0');
+		ft_putchar('\n');
+		++i;
+	}
+	ft_putchar('\n');
+}
+
+static void	__check_strcat_print(char *s1, const char *s2)
+{
+	// Print s1, s2, and strcat
+	ft_putstr(s1);
+	ft_putstr(", ");
+	ft_putstr((char *)s2);
+	ft_putstr(": ");
+	ft_putstr(ft_strcat(s1, s2));
+	ft_putchar('\n');
+}
+
+void	check_strcat()
+{
+	ft_putstr("ft_strcat:\n");
+	__check_strcat_print("first half,", " second half");
+	ft_putchar('\n');
+}
+
+static void	__check_strcmp_print(char *s1, char *s2)
+{
+	printf("%12s | %-12s| ", s1, s2);
+	printf("%5d | %5d\n", ft_strcmp(s1, s2), strcmp(s1, s2));
+}
+
+void	check_strcmp()
+{
+	ft_putstr("ft_strcmp:\n");
+	printf("%12s | %-11s | %5s | %5s\n", "String One", "String Two", "LibFT", "LibC");
+	printf("-------------+-------------+-------+-------\n");
+	__check_strcmp_print("example 1", "example 2");
+	__check_strcmp_print("one", "two");
+	__check_strcmp_print("aaaaa", "aaaab");
+	__check_strcmp_print("bad", "baa");
+	__check_strcmp_print("this", "that");
+	__check_strcmp_print("", "that");
+	__check_strcmp_print("this", "");
+	__check_strcmp_print("", "");
+}
+
+static void	__check_strncmp_print(char *s1, char *s2)
+{
+	printf("%12s | %-12s| ", s1, s2);
+	printf("%5d | %5d\n", ft_strncmp(s1, s2, 3), strncmp(s1, s2, 3));
+}
+
+void	check_strncmp()
+{
+	ft_putstr("ft_strncmp:\n");
+	printf("%12s | %-11s | %5s | %5s\n", "String One", "String Two", "LibFT", "LibC");
+	printf("-------------+-------------+-------+-------\n");
+	__check_strncmp_print("example 1", "example 2");
+	__check_strncmp_print("one", "two");
+	__check_strncmp_print("aaaaa", "aaaab");
+	__check_strncmp_print("bad", "baa");
+	__check_strncmp_print("this", "that");
+	__check_strncmp_print("", "that");
+	__check_strncmp_print("this", "");
+	__check_strncmp_print("", "");
+}
 
 static void	__check_atoi_print(char *str)
 {
@@ -166,7 +252,7 @@ void	check_isprint()
 	ft_putchar(ft_isprint(')') + 48);
 	ft_putchar(ft_isprint('}') + 48);
 	ft_putchar(ft_isprint('~') + 48);
-	ft_putchar(ft_isprint('\t') + 48);
+	ft_putchar(ft_isprint('\\') + 48);
 	ft_putchar(ft_isprint(' ') + 48);
 	ft_putchar(ft_isprint('.') + 48);
 	ft_putchar('\n');

@@ -1,30 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   debug.h                                            :+:      :+:    :+:   */
+/*   ft_chart.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarnett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/17 14:07:10 by abarnett          #+#    #+#             */
-/*   Updated: 2018/04/23 16:07:01 by abarnett         ###   ########.fr       */
+/*   Created: 2018/04/23 10:48:13 by abarnett          #+#    #+#             */
+/*   Updated: 2018/04/23 10:55:09 by abarnett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DEBUG_H
-# define DEBUG_H
+#include "libft.h"
 
-void	check_bzero();
-void	check_strcat();
-void	check_strncat();
-void	check_strcmp();
-void	check_strncmp();
-void	check_atoi();
-void	check_isalpha();
-void	check_isdigit();
-void	check_isalnum();
-void	check_isascii();
-void	check_isprint();
-void	check_toupper();
-void	check_tolower();
-
-#endif
+void	ft_chart(/* parameters */)
+{
+	/*
+	 * do some chart printing
+	 */
+}

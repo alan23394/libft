@@ -1,30 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   debug.h                                            :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarnett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/17 14:07:10 by abarnett          #+#    #+#             */
-/*   Updated: 2018/04/23 16:07:01 by abarnett         ###   ########.fr       */
+/*   Created: 2018/04/23 11:22:25 by abarnett          #+#    #+#             */
+/*   Updated: 2018/04/23 15:05:04 by abarnett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DEBUG_H
-# define DEBUG_H
+#include "libft.h"
 
-void	check_bzero();
-void	check_strcat();
-void	check_strncat();
-void	check_strcmp();
-void	check_strncmp();
-void	check_atoi();
-void	check_isalpha();
-void	check_isdigit();
-void	check_isalnum();
-void	check_isascii();
-void	check_isprint();
-void	check_toupper();
-void	check_tolower();
+char	*ft_strcat(char *s1, const char *s2)
+{
+	int i;
 
-#endif
+	i = 0;
+	while (s2[i])
+		s1[ft_strlen(s1) + 1] = s2[i++];
+	return (s1);
+}

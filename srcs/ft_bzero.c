@@ -1,30 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   debug.h                                            :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarnett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/17 14:07:10 by abarnett          #+#    #+#             */
-/*   Updated: 2018/04/23 16:07:01 by abarnett         ###   ########.fr       */
+/*   Created: 2018/04/23 15:36:02 by abarnett          #+#    #+#             */
+/*   Updated: 2018/04/23 17:13:46 by abarnett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DEBUG_H
-# define DEBUG_H
+#include "libft.h"
 
-void	check_bzero();
-void	check_strcat();
-void	check_strncat();
-void	check_strcmp();
-void	check_strncmp();
-void	check_atoi();
-void	check_isalpha();
-void	check_isdigit();
-void	check_isalnum();
-void	check_isascii();
-void	check_isprint();
-void	check_toupper();
-void	check_tolower();
-
-#endif
+void	ft_bzero(void *s, size_t n)
+{
+	ft_memset(s, 0, (size_t)n);
+}

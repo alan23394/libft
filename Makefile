@@ -6,7 +6,7 @@
 #    By: abarnett <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/04/17 14:22:04 by abarnett          #+#    #+#              #
-#    Updated: 2018/04/21 05:15:10 by abarnett         ###   ########.fr        #
+#    Updated: 2018/04/23 10:37:46 by abarnett         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,6 +37,6 @@ fclean: clean
 	@- $(RM) $(NAME) $(debug_NAME)
 
 clear:
-	@ find . -name "*.sw*" -delete
+	find . -name "*.sw*" -delete
 
 re: fclean all
