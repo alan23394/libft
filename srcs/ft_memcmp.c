@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarnett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/23 11:39:21 by abarnett          #+#    #+#             */
-/*   Updated: 2018/05/14 20:16:44 by abarnett         ###   ########.fr       */
+/*   Created: 2018/05/15 13:24:53 by abarnett          #+#    #+#             */
+/*   Updated: 2018/05/17 14:57:41 by abarnett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncat(char *s1, const char *s2, size_t n)
+int	ft_memcmp(const void *s1, const void *s2)
 {
-	char	*dest_cursor;
+	unsigned char *c1;
+	unsigned char *c2;
 
-	dest_cursor = s1;
-	while (*dest_cursor)
-		dest_cursor++;
-	while (n-- && *s2)
-		*dest_cursor++ = *s2++;
-	*dest_cursor = '\0';
-	return (s1);
+	c1 = (unsigned char*)s1;
+	c2 = (unsigned char*)s2;
+	// Is it necessary to check if they exist?
+	// #checklater
+	while (*c1 == *c2 && *c1 && *c2)
+		;
+	return ((unsigned char)*c1 - (unsigned char)*c2);
 }

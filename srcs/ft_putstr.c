@@ -6,7 +6,7 @@
 /*   By: abarnett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/17 14:37:41 by abarnett          #+#    #+#             */
-/*   Updated: 2018/04/23 15:23:33 by abarnett         ###   ########.fr       */
+/*   Updated: 2018/05/14 20:08:21 by abarnett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,5 @@
 
 void	ft_putstr(char *str)
 {
-	while (*str)
-		ft_putchar(*str++);
+	write(1, str, ft_strlen(str));
 }

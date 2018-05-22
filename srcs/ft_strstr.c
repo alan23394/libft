@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarnett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/23 11:39:21 by abarnett          #+#    #+#             */
-/*   Updated: 2018/05/14 20:16:44 by abarnett         ###   ########.fr       */
+/*   Created: 2018/05/15 13:53:24 by abarnett          #+#    #+#             */
+/*   Updated: 2018/05/15 13:56:48 by abarnett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncat(char *s1, const char *s2, size_t n)
+char	*ft_strstr(const char *haystack, const char *neede)
 {
-	char	*dest_cursor;
+	size_t	i;
 
-	dest_cursor = s1;
-	while (*dest_cursor)
-		dest_cursor++;
-	while (n-- && *s2)
-		*dest_cursor++ = *s2++;
-	*dest_cursor = '\0';
-	return (s1);
+	i = 0;
+	if (!needle)
+		return ((char *)haystack);
+	while (*haystack++)
+	{
+		while ((*haystack == *needle++) && *needle)
+			i++;
+		if (i == ft_strlen(needle))
+			return ((char *)haystack - ft_strlen(needle));
+		needle = needle - i;
+		i = 0;
+	}
+	return (0);
 }

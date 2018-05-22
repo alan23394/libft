@@ -6,7 +6,7 @@
 /*   By: abarnett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/23 15:36:02 by abarnett          #+#    #+#             */
-/*   Updated: 2018/04/23 17:13:46 by abarnett         ###   ########.fr       */
+/*   Updated: 2018/05/09 12:55:18 by abarnett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	ft_memset(s, 0, (size_t)n);
+	ft_memset(s, 0, n);
 }

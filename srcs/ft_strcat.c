@@ -6,7 +6,7 @@
 /*   By: abarnett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/23 11:22:25 by abarnett          #+#    #+#             */
-/*   Updated: 2018/04/23 15:05:04 by abarnett         ###   ########.fr       */
+/*   Updated: 2018/05/14 20:42:24 by abarnett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,13 @@
 
 char	*ft_strcat(char *s1, const char *s2)
 {
-	int i;
+	char	*dest_cursor;
 
-	i = 0;
-	while (s2[i])
-		s1[ft_strlen(s1) + 1] = s2[i++];
+	dest_cursor = s1;
+	while (*dest_cursor)
+		dest_cursor++;
+	while (*s2)
+		*dest_cursor++ = *s2++;
+	*dest_cursor = '\0';
 	return (s1);
 }
