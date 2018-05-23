@@ -6,7 +6,7 @@
 /*   By: abarnett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/18 12:09:46 by abarnett          #+#    #+#             */
-/*   Updated: 2018/04/18 16:51:44 by abarnett         ###   ########.fr       */
+/*   Updated: 2018/05/14 20:08:20 by abarnett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,8 @@ int	ft_strlen(char *str)
 {
 	int i;
 
-	if (!str)
-		return (0);
 	i = 0;
-	while (*str)
-	{
-		(void)str++;
+	while (*str++)
 		i++;
-	}
 	return (i);
 }

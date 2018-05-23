@@ -6,7 +6,7 @@
 /*   By: abarnett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/17 13:54:19 by abarnett          #+#    #+#             */
-/*   Updated: 2018/04/23 16:14:22 by abarnett         ###   ########.fr       */
+/*   Updated: 2018/05/09 13:40:59 by abarnett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 int	main(void)
 {
+	/*
 	check_atoi();
 	ft_putchar('\n');
 	check_isalpha();
@@ -36,5 +37,13 @@ int	main(void)
 	check_strncmp();
 	ft_putchar('\n');
 	check_bzero();
+	ft_putchar('\n');
+	check_strcat();
+	ft_putchar('\n');
+	check_strncat();
+	ft_putchar('\n');
+	*/
+	check_memcpy();
+	ft_putchar('\n');
 	return (0);
 }

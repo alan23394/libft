@@ -6,7 +6,7 @@
 /*   By: abarnett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/17 14:07:10 by abarnett          #+#    #+#             */
-/*   Updated: 2018/04/23 16:07:01 by abarnett         ###   ########.fr       */
+/*   Updated: 2018/05/09 13:40:59 by abarnett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 # define DEBUG_H
 
 void	check_bzero();
+void	check_memcpy();
 void	check_strcat();
+void	check_strncat();
 void	check_strncat();
 void	check_strcmp();
 void	check_strncmp();

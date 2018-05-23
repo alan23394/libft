@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarnett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/23 11:39:21 by abarnett          #+#    #+#             */
-/*   Updated: 2018/05/14 20:16:44 by abarnett         ###   ########.fr       */
+/*   Created: 2018/05/15 13:56:56 by abarnett          #+#    #+#             */
+/*   Updated: 2018/05/21 16:45:54 by abarnett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncat(char *s1, const char *s2, size_t n)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	char	*dest_cursor;
+	const size_t src_length;
+	const size_t dst_length;
 
-	dest_cursor = s1;
-	while (*dest_cursor)
-		dest_cursor++;
-	while (n-- && *s2)
-		*dest_cursor++ = *s2++;
-	*dest_cursor = '\0';
-	return (s1);
+	src_length = ft_strlen((char *)src);
+	dst_length = ft_strlen(dst);
+	if (dst_length >= dstsize)
+		return (dst_length + src_length);
+	dst += dst_length;
+	dstsize -= (dst_length - 1);
+	while (dstsize--)
+		*dst++ = *src++;
+	return (dst_length + src_length);
 }

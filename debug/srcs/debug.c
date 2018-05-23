@@ -6,7 +6,7 @@
 /*   By: abarnett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/17 14:19:41 by abarnett          #+#    #+#             */
-/*   Updated: 2018/04/23 17:20:57 by abarnett         ###   ########.fr       */
+/*   Updated: 2018/05/14 20:44:27 by abarnett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,21 +39,38 @@ void	check_bzero()
 	ft_putchar('\n');
 }
 
-static void	__check_strcat_print(char *s1, const char *s2)
+void	check_memcpy()
 {
-	// Print s1, s2, and strcat
-	ft_putstr(s1);
-	ft_putstr(", ");
-	ft_putstr((char *)s2);
-	ft_putstr(": ");
-	ft_putstr(ft_strcat(s1, s2));
+	char	msg[] = "tomorrow's sunday, we gonna out for picnic!";
+	char	dst[100];
+	//size_t	nbytes;
+
+	ft_memcpy(dst, msg, sizeof(msg));
+	ft_putstr(dst);
 	ft_putchar('\n');
 }
 
 void	check_strcat()
 {
+	char		*s1;
+
+	s1 = malloc(50 * sizeof(char));
 	ft_putstr("ft_strcat:\n");
-	__check_strcat_print("first half,", " second half");
+	ft_strcat(s1, "This is a ");
+	ft_strcat(s1, "strcat example!");
+	ft_putstr(s1);
+	ft_putchar('\n');
+}
+
+void	check_strncat()
+{
+	char		*s1;
+
+	s1 = malloc(50 * sizeof(char));
+	ft_putstr("ft_strncat:\n");
+	ft_strncat(s1, "This is a ", 8);
+	ft_strncat(s1, "strncat example!", 7);
+	ft_putstr(s1);
 	ft_putchar('\n');
 }
 
