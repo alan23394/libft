@@ -6,7 +6,7 @@
 /*   By: abarnett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/21 06:08:58 by abarnett          #+#    #+#             */
-/*   Updated: 2018/05/17 14:24:40 by abarnett         ###   ########.fr       */
+/*   Updated: 2018/05/22 18:36:09 by abarnett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int	ft_atoi(char *str)
 	int	flag;
 
 	i = 0;
+	flag = 1;
 	while (ft_isspace(*str))
 		str++;
 	if (*str == '-' || *str == '+')

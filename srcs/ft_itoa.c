@@ -14,11 +14,11 @@ int			length_of_num(long num)
 	return (length);
 }
 
-static void	__putnbr(char *str, long num, int base)
+static void	__putnbr(char *str, long num)
 {
 	if (num >= 10)
-		ft_putstr(str, num / 10);
-	ft_strcat(str, ('0' + (num % base)));
+		__putnbr(str, num / 10);
+	ft_strcat(str, ('0' + (num % 10)));
 }
 
 char		*ft_itoa(int n)
