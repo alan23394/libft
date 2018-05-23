@@ -18,7 +18,7 @@ static void	__putnbr(char *str, long num)
 {
 	if (num >= 10)
 		__putnbr(str, num / 10);
-	ft_strcat(str, ('0' + (num % 10)));
+	str[ft_strlen(str)] = (char)('0' + num%10);
 }
 
 char		*ft_itoa(int n)
@@ -31,7 +31,7 @@ char		*ft_itoa(int n)
 	{
 		num *= -1;
 		str = malloc(sizeof(char) * length_of_num(num) + 1);
-		ft_strcat(str, '-');
+		ft_strcat(str, (const char *)'-');
 	}
 	else
 		str = malloc(sizeof(char) * length_of_num(num));
