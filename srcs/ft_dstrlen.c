@@ -1,20 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memdel.c                                        :+:      :+:    :+:   */
+/*   ft_dstrlen.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarnett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/26 10:09:09 by abarnett          #+#    #+#             */
-/*   Updated: 2018/05/26 10:09:10 by abarnett         ###   ########.fr       */
+/*   Created: 2018/05/26 12:19:17 by abarnett          #+#    #+#             */
+/*   Updated: 2018/05/26 13:05:23 by abarnett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
-void	ft_memdel(void **ap)
+int	ft_dstrlen(const char *str, char del)
 {
-	free(*ap);
-	*ap = 0;
+	int	i;
+
+	i = 0;
+	while (*str && *str != del)
+	{
+		i++;
+		str++;
+	}
+	return (i);
 }

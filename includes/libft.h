@@ -6,7 +6,7 @@
 /*   By: abarnett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/17 13:56:25 by abarnett          #+#    #+#             */
-/*   Updated: 2018/05/22 21:16:11 by abarnett         ###   ########.fr       */
+/*   Updated: 2018/05/26 10:30:04 by abarnett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,8 +74,8 @@ int		ft_strnequ(const char *s1, const char *s2, size_t n);
 char	*ft_strsub(const char *s, unsigned int start, size_t len);
 char	*ft_strjoin(const char *s1, const char *s2);
 char	*ft_strtrim(const char *s);
-// not done yet
-//char	**ft_strsplit(const char *s, char c);
+char	**ft_strsplit(const char *s, char c);
+int		ft_numlen(long num);
 char	*ft_itoa(int n);
 void	ft_putchar(char c);
 void	ft_putstr(const char *s);

@@ -6,7 +6,7 @@
 /*   By: abarnett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/22 20:47:04 by abarnett          #+#    #+#             */
-/*   Updated: 2018/05/22 20:49:38 by abarnett         ###   ########.fr       */
+/*   Updated: 2018/05/26 10:05:00 by abarnett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_strequ(const char *s1, const char *s2)
 {
-	while(*s1++ == *s2++ && *s1 && *s2)
+	while (*s1++ == *s2++ && *s1 && *s2)
 		;
 	return (((unsigned char)*s1 - (unsigned char)*s2) ? 0 : 1);
 }
