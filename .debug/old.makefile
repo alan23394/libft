@@ -11,22 +11,32 @@
 # **************************************************************************** #
 
 NAME := libft.a
-C_OBJS := $(patsubst %.c,%.o,$(wildcard ./*.c))
+C_OBJS := $(patsubst %.c,%.o,$(wildcard ./srcs/*.c))
+INCLUDE_DIRS := ./includes/ ./debug/includes/
 
-CFLAGS += -Wall -Wextra -Werror
+debug_NAME := test
+debug_C_OBJS := $(patsubst %.c,%.o,$(wildcard ./debug/srcs/*.c))
 
-.PHONY: all clean fclean re
+CFLAGS += -Wall -Wextra -Werror $(foreach includedir,$(INCLUDE_DIRS),-I$(includedir))
 
-all: $(NAME)
+.PHONY: all nowarning clean fclean clear re
+
+all: $(debug_NAME)
 
 $(NAME): $(C_OBJS)
 	ar rc $(NAME) $(C_OBJS)
 	ranlib $(NAME)
 
+$(debug_NAME): $(C_OBJS) $(debug_C_OBJS)
+	$(CC) $(CFLAGS) -o $(debug_NAME) $(C_OBJS) $(debug_C_OBJS)
+
 clean:
-	@- $(RM) $(C_OBJS)
+	@- $(RM) $(C_OBJS) $(debug_C_OBJS)
 
 fclean: clean
-	@- $(RM) $(NAME)
+	@- $(RM) $(NAME) $(debug_NAME)
+
+clear:
+	find . -name "*.sw*" -delete
 
 re: fclean all
