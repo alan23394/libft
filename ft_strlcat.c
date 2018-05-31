@@ -14,17 +14,15 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	size_t src_length;
-	size_t dst_length;
+	size_t slen;
+	size_t dlen;
 
-	src_length = ft_strlen(src);
-	dst_length = ft_strlen(dst);
-	if (dst_length >= dstsize)
-		return (dst_length + src_length);
-	dst += dst_length;
-	dstsize -= (dst_length - 1);
-	while (dstsize--)
-		*dst++ = *src++;
-	*dst = '\0';
-	return (dst_length + src_length);
+	slen = ft_strlen(src);
+	dlen = ft_strlen(dst);
+	if (dlen < dstsize)
+	{
+		ft_strncpy(dst + dlen, src, dstsize - dlen - 1);
+		dst[dstsize - 1] = '\0';
+	}
+	return (dlen + slen);
 }

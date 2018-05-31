@@ -14,10 +14,10 @@
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	// Is it necessary to check if they exist?
-	// Is it faster with pointers instead of arrays?
-	// #checklater
-	while (*s1 == *s2 && *s1 && *s2 && n--)
-		;
+	while (*s1 && *s2 && *s1 == *s2 && n--)
+	{
+		s1++;
+		s2++;
+	}
 	return ((unsigned char)*s1 - (unsigned char)*s2);
 }

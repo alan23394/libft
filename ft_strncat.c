@@ -14,13 +14,13 @@
 
 char	*ft_strncat(char *s1, const char *s2, size_t n)
 {
-	char	*dest_cursor;
+	char	*cur;
 
-	dest_cursor = s1;
-	while (*dest_cursor)
-		dest_cursor++;
-	while (n-- && *s2)
-		*dest_cursor++ = *s2++;
-	*dest_cursor = '\0';
+	cur = s1;
+	while (*cur)
+		cur++;
+	while (n--)
+		*cur++ = *s2++;
+	*cur = '\0';
 	return (s1);
 }

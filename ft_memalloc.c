@@ -15,10 +15,5 @@
 
 void	*ft_memalloc(size_t size)
 {
-	void	*ptr;
-
-	ptr = malloc(size);
-	if (ptr == 0)
-		return (0);
-	return (ft_memset(ptr, 0, size));
+	return (ft_memset(malloc(size), 0, size));
 }

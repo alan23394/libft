@@ -14,12 +14,12 @@
 
 char	*ft_strncpy(char *dst, const char *src, size_t len)
 {
-	char	*dst_cursor;
+	char	*cur;
 
-	dst_cursor = dst;
-	while (len-- && *src)
-		*dst_cursor++ = *src++;
+	cur = dst;
+	while (*src && len--)
+		*cur++ = *src++;
 	if (len)
-		ft_memset(dst_cursor, '\0', len);
+		ft_memset(cur, '\0', len);
 	return (dst);
 }

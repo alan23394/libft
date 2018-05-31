@@ -14,11 +14,5 @@
 
 char	*ft_strcpy(char *dst, const char *src)
 {
-	char	*dst_cursor;
-
-	dst_cursor = dst;
-	while (*src)
-		*dst_cursor++ = *src++;
-	*dst_cursor = '\0';
-	return (dst);
+	return (ft_strncpy(dst, src, ft_strlen(src) + 1));
 }

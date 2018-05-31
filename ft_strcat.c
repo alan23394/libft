@@ -14,13 +14,5 @@
 
 char	*ft_strcat(char *s1, const char *s2)
 {
-	char	*dest_cursor;
-
-	dest_cursor = s1;
-	while (*dest_cursor)
-		dest_cursor++;
-	while (*s2)
-		*dest_cursor++ = *s2++;
-	*dest_cursor = '\0';
-	return (s1);
+	return (ft_strncat(s1, s2, ft_strlen(s2)));
 }
