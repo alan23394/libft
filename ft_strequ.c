@@ -1,29 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_strequ.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarnett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/22 20:56:01 by abarnett          #+#    #+#             */
-/*   Updated: 2018/05/26 10:03:50 by abarnett         ###   ########.fr       */
+/*   Created: 2018/05/22 20:47:04 by abarnett          #+#    #+#             */
+/*   Updated: 2018/05/31 13:44:06 by abarnett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(const char *s)
+int	ft_strequ(const char *s1, const char *s2)
 {
-	char	*ptr;
-	int		i;
-
-	i = ft_strlen(s) - 1;
-	while (s[i] == '\t' || s[i] == '\n' || s[i] == ' ')
-		i--;
-	i = ft_strlen(s) - i - 1;
-	while (*s == '\t' || *s == '\n' || *s == ' ')
-		s++;
-	ptr = (char *)malloc(sizeof(char *) * ((ft_strlen(s) - i) + 1));
-	ft_strlcat(ptr, s, (ft_strlen(s) - i) + 1);
-	return (sizeof(ptr) ? ptr - ft_strlen(ptr) : 0);
+	return (ft_strncmp(s1, s2, ft_strlen(s1)) ? 0 : 1);
 }

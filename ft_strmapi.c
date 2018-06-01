@@ -1,39 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarnett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/26 10:05:09 by abarnett          #+#    #+#             */
-/*   Updated: 2018/05/26 10:21:24 by abarnett         ###   ########.fr       */
+/*   Created: 2018/05/22 20:45:22 by abarnett          #+#    #+#             */
+/*   Updated: 2018/05/31 13:57:46 by abarnett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
-static void	recursive_strfill(char *str, long num)
+char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 {
-	if (num >= 10)
-		recursive_strfill(str, num / 10);
-	str[ft_strlen(str)] = (char)('0' + num % 10);
-}
+	char			*str;
+	char			*cur;
+	unsigned int	i;
 
-char		*ft_itoa(int n)
-{
-	char	*str;
-	long	num;
-
-	num = (long)n;
-	if (num < 0)
-	{
-		num *= -1;
-		str = malloc(sizeof(char) * ft_numlen(num) + 1);
-		ft_strcat(str, (const char *)'-');
-	}
-	else
-		str = malloc(sizeof(char) * ft_numlen(num));
-	recursive_strfill(str, num);
+	str = ft_strnew(ft_strlen(s) + 1);
+	cur = str;
+	i = 0;
+	while (cur && i < ft_strlen(s))
+		*cur++ = f(i++, *s);
 	return (str);
 }

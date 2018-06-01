@@ -1,28 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strsplit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarnett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/15 13:24:53 by abarnett          #+#    #+#             */
-/*   Updated: 2018/05/28 12:41:02 by abarnett         ###   ########.fr       */
+/*   Created: 2018/05/22 21:14:13 by abarnett          #+#    #+#             */
+/*   Updated: 2018/05/31 15:25:25 by abarnett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+char	**ft_strsplit(const char *s, char c)
 {
-	unsigned char *c1;
-	unsigned char *c2;
+	char	**words;
+	int		count;
+	int		i;
 
-	c1 = (unsigned char *)s1;
-	c2 = (unsigned char *)s2;
-	while (*c1 == *c2 && n--)
+	if (!s)
+		return (0);
+	count = ft_count_words(s, c);
+	words = (char **)ft_memalloc(sizeof(char *) * (count + 1));
+	if (!words)
+		return (0);
+	i = 0;
+	while (count--)
 	{
-		c1++;
-		c2++;
+		while (*s != '\0' && *s == c)
+			s++;
+		words[i] = ft_strsub(s, 0, ft_dstrlen(s, c));
+		if (words[i] == 0)
+			return (0);
+		s = s + ft_dstrlen(s, c);
+		i++;
 	}
-	return ((unsigned char)*c1 - (unsigned char)*c2);
+	words[i] = 0;
+	return (words);
 }
