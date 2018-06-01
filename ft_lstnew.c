@@ -6,7 +6,7 @@
 /*   By: abarnett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/26 10:06:41 by abarnett          #+#    #+#             */
-/*   Updated: 2018/05/31 16:39:48 by abarnett         ###   ########.fr       */
+/*   Updated: 2018/06/01 12:25:18 by abarnett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 	head = (t_list *)ft_memalloc(sizeof(t_list));
 	if (head == 0)
 		return (0);
+	head->next = 0;
 	if (content == 0)
 	{
 		head->content = 0;
@@ -33,6 +34,5 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 	}
 	ft_memcpy(head->content, content, content_size);
 	head->content_size = content_size;
-	head->next = 0;
 	return (head);
 }
