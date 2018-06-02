@@ -6,7 +6,7 @@
 /*   By: abarnett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/26 10:10:18 by abarnett          #+#    #+#             */
-/*   Updated: 2018/05/26 10:15:05 by abarnett         ###   ########.fr       */
+/*   Updated: 2018/06/01 16:40:26 by abarnett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,9 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
 {
-	f(lst);
-	while (lst->next)
+	while (lst)
 	{
-		lst = lst->next;
 		f(lst);
+		lst = lst->next;
 	}
 }
