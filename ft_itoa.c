@@ -6,18 +6,26 @@
 /*   By: abarnett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/26 10:05:09 by abarnett          #+#    #+#             */
-/*   Updated: 2018/05/31 15:43:40 by abarnett         ###   ########.fr       */
+/*   Updated: 2018/06/02 19:07:09 by abarnett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
 
+static void	append_character(char *dest, char src)
+{
+	while (*dest)
+		dest++;
+	*dest++ = src;
+	*dest = '\0';
+}
+
 static void	recursive_strfill(char *str, long num)
 {
 	if (num >= 10)
 		recursive_strfill(str, num / 10);
-	str[ft_strlen(str)] = (char)('0' + num % 10);
+	append_character(str, ('0' + num % 10));
 }
 
 char		*ft_itoa(int n)
@@ -30,10 +38,16 @@ char		*ft_itoa(int n)
 	{
 		num *= -1;
 		str = ft_strnew(ft_numlen(num) + 1);
-		ft_strcat(str, (const char *)'-');
+		if (!str)
+			return (0);
+		str[0] = '-';
 	}
 	else
+	{
 		str = ft_strnew(ft_numlen(num));
+		if (!str)
+			return (0);
+	}
 	recursive_strfill(str, num);
 	return (str);
 }

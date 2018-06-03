@@ -6,7 +6,7 @@
 /*   By: abarnett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/26 10:05:36 by abarnett          #+#    #+#             */
-/*   Updated: 2018/05/26 10:05:37 by abarnett         ###   ########.fr       */
+/*   Updated: 2018/06/01 18:06:09 by abarnett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,5 @@
 
 void	*ft_memalloc(size_t size)
 {
-	return (ft_memset(malloc(size), 0, size));
+	return (ft_nmemset(malloc(size), 0, size));
 }

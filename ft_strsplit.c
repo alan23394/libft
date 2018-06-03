@@ -6,7 +6,7 @@
 /*   By: abarnett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/22 21:14:13 by abarnett          #+#    #+#             */
-/*   Updated: 2018/05/31 15:25:25 by abarnett         ###   ########.fr       */
+/*   Updated: 2018/06/02 18:43:10 by abarnett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	**ft_strsplit(const char *s, char c)
 	i = 0;
 	while (count--)
 	{
-		while (*s != '\0' && *s == c)
+		while (*s && *s == c)
 			s++;
 		words[i] = ft_strsub(s, 0, ft_dstrlen(s, c));
 		if (words[i] == 0)

@@ -1,22 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memdel.c                                        :+:      :+:    :+:   */
+/*   ft_nmemset.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarnett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/26 10:09:09 by abarnett          #+#    #+#             */
-/*   Updated: 2018/06/02 17:35:32 by abarnett         ###   ########.fr       */
+/*   Created: 2018/04/23 16:35:35 by abarnett          #+#    #+#             */
+/*   Updated: 2018/06/02 17:01:34 by abarnett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+/*
+** An implementation of memset that does not segfault if b is NULL
+** (Returns NULL instead)
+*/
+
 #include "libft.h"
 
-void	ft_memdel(void **ap)
+void	*ft_nmemset(void *b, int c, size_t len)
 {
-	if (!ap)
-		return ;
-	free(*ap);
-	*ap = 0;
+	unsigned char	*cur;
+
+	cur = b;
+	while (len-- && cur)
+		*cur++ = (unsigned char)c;
+	return (b);
 }

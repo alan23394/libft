@@ -6,7 +6,7 @@
 /*   By: abarnett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/14 20:49:13 by abarnett          #+#    #+#             */
-/*   Updated: 2018/05/14 21:22:38 by abarnett         ###   ########.fr       */
+/*   Updated: 2018/06/02 14:18:10 by abarnett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strrchr(const char *s, int c)
 	int	i;
 
 	i = 0;
-	while (*s++)
+	while (*s && *s++)
 		i++;
 	while (i--)
 	{

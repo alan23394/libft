@@ -6,7 +6,7 @@
 /*   By: abarnett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/26 10:05:42 by abarnett          #+#    #+#             */
-/*   Updated: 2018/05/31 13:57:53 by abarnett         ###   ########.fr       */
+/*   Updated: 2018/06/02 17:35:51 by abarnett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 char	*ft_strnew(size_t size)
 {
-	return ((char *)ft_memset(malloc(size), '\0', size));
+	return ((char *)ft_nmemset(malloc(size + 1), '\0', size + 1));
 }
