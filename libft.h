@@ -6,15 +6,15 @@
 /*   By: abarnett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/17 13:56:25 by abarnett          #+#    #+#             */
-/*   Updated: 2018/06/01 15:35:30 by abarnett         ###   ########.fr       */
+/*   Updated: 2018/06/04 17:44:47 by abarnett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# define MAX 2147483647
-# define MIN -2147483648
+# define INTMAX 2147483647
+# define INTMIN -2147483648
 
 # include <stdlib.h>
 # include <unistd.h>
@@ -30,6 +30,7 @@ typedef struct		s_list
 ** Section One
 */
 void				*ft_memset(void *b, int c, size_t len);
+void				*ft_nmemset(void *b, int c, size_t len);
 void				ft_bzero(void *s, size_t n);
 void				*ft_memcpy(void *dst, const void *src, size_t n);
 void				*ft_memccpy(void *dst, const void *src, int c, size_t n);

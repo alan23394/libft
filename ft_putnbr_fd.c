@@ -6,7 +6,7 @@
 /*   By: abarnett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/26 10:07:08 by abarnett          #+#    #+#             */
-/*   Updated: 2018/05/26 10:07:21 by abarnett         ###   ########.fr       */
+/*   Updated: 2018/06/04 17:14:23 by abarnett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	if (n == MIN)
+	if (n == INTMIN)
 	{
 		ft_putstr_fd("-2147483648", fd);
 		return ;
