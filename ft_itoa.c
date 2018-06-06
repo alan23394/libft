@@ -6,11 +6,10 @@
 /*   By: abarnett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/26 10:05:09 by abarnett          #+#    #+#             */
-/*   Updated: 2018/06/02 19:07:09 by abarnett         ###   ########.fr       */
+/*   Updated: 2018/06/06 14:25:29 by abarnett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 static void	append_character(char *dest, char src)
