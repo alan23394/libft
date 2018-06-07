@@ -6,7 +6,7 @@
 /*   By: exam <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/18 19:45:40 by exam              #+#    #+#             */
-/*   Updated: 2018/06/06 16:38:28 by abarnett         ###   ########.fr       */
+/*   Updated: 2018/06/06 17:10:40 by abarnett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,8 @@ char		*ft_itoa_base(int n, int base)
 	char *str;
 	long num;
 
-	num = (long)n;
-	if (num < 0 && num *= -1 && base == 10)
+	num = (long)(n < 0 ? (n * -1) : n);
+	if (n < 0 && base == 10)
 	{
 		str = ft_strnew(ft_numlen_base(num, base) + 1);
 		if (!str)
@@ -50,6 +50,5 @@ char		*ft_itoa_base(int n, int base)
 			return (0);
 	}
 	recursive_strfill_base(str, num, base);
-
 	return (str);
 }
