@@ -6,7 +6,7 @@
 /*   By: abarnett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/17 13:56:25 by abarnett          #+#    #+#             */
-/*   Updated: 2018/06/06 16:38:29 by abarnett         ###   ########.fr       */
+/*   Updated: 2018/06/07 20:40:58 by abarnett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,7 @@ int					ft_dstrlen(const char *str, char del);
 char				**ft_strsplit(const char *s, char c);
 int					ft_numlen(long num);
 int					ft_numlen_base(long num, int base);
+void				ft_strapp(char *dst, char c);
 char				*ft_itoa(int n);
 char				*ft_itoa_base(int n, int base);
 void				ft_putchar(char c);
