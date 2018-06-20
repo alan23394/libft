@@ -15,9 +15,9 @@
 void	ft_strapp(char *dst, char c)
 {
 	if (!dst)
-		return (0);
-	while (*dest)
-		dest++;
-	*dest++ = c;
-	*dest = '\0';
+		return ;
+	while (*dst)
+		dst++;
+	*dst++ = c;
+	*dst = '\0';
 }
