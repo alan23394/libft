@@ -6,7 +6,7 @@
 /*   By: abarnett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/17 13:56:25 by abarnett          #+#    #+#             */
-/*   Updated: 2019/03/03 00:30:56 by alan             ###   ########.fr       */
+/*   Updated: 2019/03/03 00:33:36 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,6 +121,14 @@ void				ft_putchar_fd(char c, int fd);
 void				ft_putstr_fd(const char *s, int fd);
 void				ft_putendl_fd(const char *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
+
+/*
+** Unicode
+*/
+
+size_t				ft_wstrlen(const wchar_t *str);
+char				*conv_utf8_str(wchar_t *wstr);
+char				*conv_utf8_char(wchar_t wchar, char *str);
 
 /*
 ** Math
