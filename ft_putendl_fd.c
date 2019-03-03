@@ -6,16 +6,18 @@
 /*   By: abarnett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/26 10:06:09 by abarnett          #+#    #+#             */
-/*   Updated: 2018/06/02 19:12:15 by abarnett         ###   ########.fr       */
+/*   Updated: 2019/03/03 03:22:40 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_put.h"
 
 void	ft_putendl_fd(char const *s, int fd)
 {
 	if (!s)
+	{
 		return ;
-	write(fd, s, ft_strlen(s));
-	write(fd, "\n", 1);
+	}
+	ft_putstr_fd(s, fd);
+	ft_putchar_fd('\n', fd);
 }
