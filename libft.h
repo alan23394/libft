@@ -6,7 +6,7 @@
 /*   By: abarnett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/17 13:56:25 by abarnett          #+#    #+#             */
-/*   Updated: 2019/03/03 00:48:30 by alan             ###   ########.fr       */
+/*   Updated: 2019/03/03 01:01:57 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include "ft_binarytree.h"
+# include "ft_math.h"
 
 # define INTMAX 2147483647
 # define INTMIN -2147483648
@@ -134,21 +135,6 @@ void				ft_putnbr_fd(int n, int fd);
 size_t				ft_wstrlen(const wchar_t *str);
 char				*conv_utf8_str(wchar_t *wstr);
 char				*conv_utf8_char(wchar_t wchar, char *str);
-
-/*
-** Math
-*/
-
-int					ft_vamax(int params, ...);
-int					ft_vamin(int params, ...);
-int					ft_max(int a, int b);
-int					ft_min(int a, int b);
-long				ft_abs(long nb);
-long				ft_pow(int a, int b);
-double				ft_pow_d(double a, int b);
-int					ft_floor(double roundee);
-int					ft_ceil(double roundee);
-long				ft_round(double roundee);
 
 /*
 ** Bonus
