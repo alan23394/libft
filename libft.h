@@ -6,7 +6,7 @@
 /*   By: abarnett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/17 13:56:25 by abarnett          #+#    #+#             */
-/*   Updated: 2019/03/02 21:48:17 by alan             ###   ########.fr       */
+/*   Updated: 2019/03/02 23:25:56 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,8 @@ int					ft_numlen_base(long num, int base);
 void				ft_strapp(char *dst, char c);
 char				*ft_itoa(int n);
 char				*ft_itoa_base(int n, int base);
+char				*ft_ftoa(double nb, int precision);
+char				*ft_ftosn(double nb, int precision);
 void				ft_putchar(char c);
 void				ft_putstr(const char *s);
 void				ft_putendl(const char *s);
