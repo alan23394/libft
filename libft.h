@@ -6,7 +6,7 @@
 /*   By: abarnett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/17 13:56:25 by abarnett          #+#    #+#             */
-/*   Updated: 2019/03/03 00:21:03 by alan             ###   ########.fr       */
+/*   Updated: 2019/03/03 00:24:19 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -146,6 +146,7 @@ void				ft_lstadd_tail(t_list **alst, t_list *item);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 void				ft_lstputstr(t_list *item);
 void				ft_lstputstr_len(t_list *item);
+void				ft_lstmemdel(void *content, size_t content_size);
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 size_t				ft_lstlen(t_list *head);
 
