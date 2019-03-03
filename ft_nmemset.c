@@ -6,11 +6,11 @@
 /*   By: abarnett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/23 16:35:35 by abarnett          #+#    #+#             */
-/*   Updated: 2019/03/03 00:38:53 by alan             ###   ########.fr       */
+/*   Updated: 2019/03/03 04:02:04 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stddef.h>
 
 /*
 ** An implementation of memset that does not segfault if b is NULL
