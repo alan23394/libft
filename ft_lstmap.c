@@ -6,13 +6,19 @@
 /*   By: abarnett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/26 10:11:06 by abarnett          #+#    #+#             */
-/*   Updated: 2018/06/01 15:34:58 by abarnett         ###   ########.fr       */
+/*   Updated: 2019/03/03 04:01:25 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_list.h"
+#include "ft_mem.h"
 
-t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
+/*
+** TODO Make sure deleting the list like that doesn't cause problems
+** It doesn't delete the list's void * content, just the t_list
+*/
+
+t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *item))
 {
 	t_list	*head;
 	t_list	*tmp;
@@ -30,7 +36,7 @@ t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 			while (head)
 			{
 				tmp = head->next;
-				free(head);
+				ft_memdel((void **)&head);
 				head = tmp;
 			}
 			return (0);

@@ -1,22 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_tail.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abarnett <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: alan <alanbarnett328@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/26 10:10:18 by abarnett          #+#    #+#             */
-/*   Updated: 2019/03/03 03:51:30 by alan             ###   ########.fr       */
+/*   Created: 2019/03/03 02:59:43 by alan              #+#    #+#             */
+/*   Updated: 2019/03/03 03:49:08 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_list.h"
 
-void	ft_lstiter(t_list *lst, void (*f)(t_list *item))
+/*
+** This function adds the new list item to the end of the list.
+*/
+
+void	ft_lstadd_tail(t_list **alst, t_list *item)
 {
-	while (lst)
+	t_list **cur;
+
+	cur = alst;
+	if (!*cur)
 	{
-		f(lst);
-		lst = lst->next;
+		*cur = item;
+		return ;
 	}
+	while ((*cur)->next)
+		cur = &(*cur)->next;
+	(*cur)->next = item;
 }

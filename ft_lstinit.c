@@ -1,40 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstinit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abarnett <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: alan <alanbarnett328@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/26 10:06:41 by abarnett          #+#    #+#             */
-/*   Updated: 2019/03/03 03:56:47 by alan             ###   ########.fr       */
+/*   Created: 2019/03/03 02:43:24 by alan              #+#    #+#             */
+/*   Updated: 2019/03/03 03:40:50 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_list.h"
 #include "ft_mem.h"
 
-t_list	*ft_lstnew(void const *content, size_t content_size)
+/*
+** This function exists to put a pointer into the list easily.
+** content and content size get directly copied, instead of making new memory
+*/
+
+t_list	*ft_lstinit(void const *content, size_t content_size)
 {
 	t_list *head;
 
 	head = (t_list *)ft_memalloc(sizeof(t_list));
 	if (head == 0)
 		return (0);
-	head->next = 0;
-	if (content == 0)
-	{
-		head->content = 0;
-		head->content_size = 0;
-		return (head);
-	}
-	head->content = ft_memalloc(content_size);
-	if (head->content == 0)
-	{
-		ft_memdel((void **)&head);
-		return (0);
-	}
-	ft_memcpy(head->content, content, content_size);
+	head->content = (void *)content;
 	head->content_size = content_size;
+	head->next = 0;
 	return (head);
 }
-

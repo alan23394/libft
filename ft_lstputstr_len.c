@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter.c                                       :+:      :+:    :+:   */
+/*   ft_lstputstr_len.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abarnett <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: alan <alanbarnett328@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/26 10:10:18 by abarnett          #+#    #+#             */
-/*   Updated: 2019/03/03 03:51:30 by alan             ###   ########.fr       */
+/*   Created: 2019/03/03 03:03:57 by alan              #+#    #+#             */
+/*   Updated: 2019/03/03 03:52:08 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
 #include "ft_list.h"
 
-void	ft_lstiter(t_list *lst, void (*f)(t_list *item))
+/*
+** Same as ft_lstputstr, except it will print a specific length
+*/
+
+void	ft_lstputstr_len(t_list *item)
 {
-	while (lst)
+	if (item && item->content)
 	{
-		f(lst);
-		lst = lst->next;
+		write(1, (char *)item->content, item->content_size);
 	}
 }
