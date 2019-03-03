@@ -1,25 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_string.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abarnett <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: alan <alanbarnett328@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/18 12:09:46 by abarnett          #+#    #+#             */
-/*   Updated: 2019/03/03 04:07:52 by alan             ###   ########.fr       */
+/*   Created: 2019/03/03 03:13:31 by alan              #+#    #+#             */
+/*   Updated: 2019/03/03 04:08:28 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#ifndef FT_STRING_H
+# define FT_STRING_H
 
-size_t	ft_strlen(const char *str)
-{
-	size_t i;
+# include <stddef.h>
 
-	i = 0;
-	while (*str++)
-	{
-		i++;
-	}
-	return (i);
-}
+size_t	ft_strlen(const char *str);
+
+#endif
