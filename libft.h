@@ -6,7 +6,7 @@
 /*   By: abarnett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/17 13:56:25 by abarnett          #+#    #+#             */
-/*   Updated: 2019/03/03 01:01:57 by alan             ###   ########.fr       */
+/*   Updated: 2019/03/03 02:29:15 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ typedef	struct		s_fp
 /*
 ** Section One
 */
+
 void				*ft_memset(void *b, int c, size_t len);
 void				*ft_nmemset(void *b, int c, size_t len);
 void				ft_bzero(void *s, size_t n);
@@ -70,7 +71,7 @@ char				*ft_strchr(const char *s, int c);
 char				*ft_strrchr(const char *s, int c);
 char				*ft_strstr(const char *haystack, const char *needle);
 char				*ft_strnstr(const char *haystack, const char *needle,\
-								size_t len);
+						size_t len);
 int					ft_strcmp(const char *s1, const char *s2);
 int					ft_strcmp_rev(const char *s1, const char *s2);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
@@ -90,6 +91,7 @@ void				ft_strupper(char *str);
 /*
 ** Section Two
 */
+
 void				*ft_memalloc(size_t size);
 void				ft_memdel(void **ap);
 char				*ft_strnew(size_t size);
@@ -139,6 +141,7 @@ char				*conv_utf8_char(wchar_t wchar, char *str);
 /*
 ** Bonus
 */
+
 t_list				*ft_lstinit(void const *content, size_t content_size);
 t_list				*ft_lstnew(void const *content, size_t content_size);
 void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
