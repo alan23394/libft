@@ -6,18 +6,21 @@
 /*   By: abarnett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/17 13:56:25 by abarnett          #+#    #+#             */
-/*   Updated: 2019/03/02 21:33:54 by alan             ###   ########.fr       */
+/*   Updated: 2019/03/02 21:48:17 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include <stdlib.h>
+# include <unistd.h>
+
 # define INTMAX 2147483647
 # define INTMIN -2147483648
 
-# include <stdlib.h>
-# include <unistd.h>
+# define SIG_F (f.lead_zeros + f.len_f)
+# define SIG_I (f.len_i + f.trail_zeros)
 
 typedef struct		s_list
 {
