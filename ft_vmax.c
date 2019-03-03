@@ -1,31 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_math.h                                          :+:      :+:    :+:   */
+/*   ft_vmax.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alan <alanbarnett328@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/03 00:59:54 by alan              #+#    #+#             */
-/*   Updated: 2019/03/03 01:07:45 by alan             ###   ########.fr       */
+/*   Created: 2019/03/03 01:04:20 by alan              #+#    #+#             */
+/*   Updated: 2019/03/03 01:07:33 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_MATH_H
-# define FT_MATH_H
+#include <stdarg.h>
 
-/*
-** Math functions
-*/
+int		ft_vmax(int params, ...)
+{
+	va_list	nums;
+	int		max;
+	int		cur;
 
-int					ft_vmax(int params, ...);
-int					ft_vamin(int params, ...);
-int					ft_max(int a, int b);
-int					ft_min(int a, int b);
-long				ft_abs(long nb);
-long				ft_pow(int a, int b);
-double				ft_pow_d(double a, int b);
-int					ft_floor(double roundee);
-int					ft_ceil(double roundee);
-long				ft_round(double roundee);
-
-#endif
+	va_start(nums, params);
+	max = 0;
+	if (params > 0)
+	{
+		max = va_arg(nums, int);
+		while (--params)
+		{
+			cur = va_arg(nums, int);
+			if (cur > max)
+				max = cur;
+		}
+	}
+	va_end(nums);
+	return (max);
+}
