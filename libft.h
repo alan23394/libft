@@ -6,7 +6,7 @@
 /*   By: abarnett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/17 13:56:25 by abarnett          #+#    #+#             */
-/*   Updated: 2019/03/02 23:36:51 by alan             ###   ########.fr       */
+/*   Updated: 2019/03/03 00:07:14 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,31 @@
 # define INTMAX 2147483647
 # define INTMIN -2147483648
 
-# define SIG_F (f.lead_zeros + f.len_f)
-# define SIG_I (f.len_i + f.trail_zeros)
-
 typedef struct		s_list
 {
 	void			*content;
 	size_t			content_size;
 	struct s_list	*next;
 }					t_list;
+
+typedef union		u_double
+{
+	double			d;
+	long			l;
+}					t_double;
+
+typedef	struct		s_fp
+{
+	long			integral;
+	long			fraction;
+	int				len_i;
+	int				trail_zeros;
+	int				lead_zeros;
+	int				len_f;
+}					t_fp;
+
+# define SIG_F (f.lead_zeros + f.len_f)
+# define SIG_I (f.len_i + f.trail_zeros)
 
 /*
 ** Section One
@@ -72,6 +88,7 @@ int					ft_tolower(int c);
 void				*ft_memalloc(size_t size);
 void				ft_memdel(void **ap);
 char				*ft_strnew(size_t size);
+char				*ft_strinit(size_t size, int c);
 void				ft_strdel(char **as);
 void				ft_strclr(char *s);
 void				ft_striter(char*s, void (*f)(char *));
@@ -101,6 +118,21 @@ void				ft_putchar_fd(char c, int fd);
 void				ft_putstr_fd(const char *s, int fd);
 void				ft_putendl_fd(const char *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
+
+/*
+** Math
+*/
+
+int					ft_vamax(int params, ...);
+int					ft_vamin(int params, ...);
+int					ft_max(int a, int b);
+int					ft_min(int a, int b);
+long				ft_abs(long nb);
+long				ft_pow(int a, int b);
+double				ft_pow_d(double a, int b);
+int					ft_floor(double roundee);
+int					ft_ceil(double roundee);
+long				ft_round(double roundee);
 
 /*
 ** Bonus
