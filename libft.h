@@ -6,27 +6,36 @@
 /*   By: abarnett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/17 13:56:25 by abarnett          #+#    #+#             */
-/*   Updated: 2019/03/03 02:29:15 by alan             ###   ########.fr       */
+/*   Updated: 2019/03/03 04:04:45 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+/*
+** TODO remove this include!
+** Some functions still need stdlib in here, but remove it soon!
+*/
+
 # include <stdlib.h>
-# include <unistd.h>
+
+/*
+** Eventually I should be able to get stddef out of here.
+** It is needed for all the prototypes with size_t.
+*/
+
+# include <stddef.h>
+
+# include "ft_put.h"
+# include "ft_string.h"
+# include "ft_mem.h"
+# include "ft_list.h"
 # include "ft_binarytree.h"
 # include "ft_math.h"
 
-# define INTMAX 2147483647
-# define INTMIN -2147483648
-
-typedef struct		s_list
-{
-	void			*content;
-	size_t			content_size;
-	struct s_list	*next;
-}					t_list;
+// # define INTMAX 2147483647
+// # define INTMIN -2147483648
 
 typedef union		u_double
 {
@@ -51,15 +60,10 @@ typedef	struct		s_fp
 ** Section One
 */
 
-void				*ft_memset(void *b, int c, size_t len);
-void				*ft_nmemset(void *b, int c, size_t len);
 void				ft_bzero(void *s, size_t n);
-void				*ft_memcpy(void *dst, const void *src, size_t n);
-void				*ft_memccpy(void *dst, const void *src, int c, size_t n);
 void				*ft_memmove(void *dst, const void *src, size_t len);
 void				*ft_memchr(const void *s, int c, size_t n);
 int					ft_memcmp(const void *s1, const void *s2, size_t n);
-size_t				ft_strlen(const char *str);
 char				*ft_strdup(const char *s1);
 char				*ft_strndup(const char *s1, size_t len);
 char				*ft_strcpy(char *dst, const char *src);
@@ -92,8 +96,6 @@ void				ft_strupper(char *str);
 ** Section Two
 */
 
-void				*ft_memalloc(size_t size);
-void				ft_memdel(void **ap);
 char				*ft_strnew(size_t size);
 char				*ft_strinit(size_t size, int c);
 void				ft_strdel(char **as);
@@ -121,14 +123,6 @@ char				*ft_itoa(int n);
 char				*ft_itoa_base(int n, int base);
 char				*ft_ftoa(double nb, int precision);
 char				*ft_ftosn(double nb, int precision);
-void				ft_putchar(char c);
-void				ft_putstr(const char *s);
-void				ft_putendl(const char *s);
-void				ft_putnbr(int n);
-void				ft_putchar_fd(char c, int fd);
-void				ft_putstr_fd(const char *s, int fd);
-void				ft_putendl_fd(const char *s, int fd);
-void				ft_putnbr_fd(int n, int fd);
 
 /*
 ** Unicode
@@ -137,22 +131,5 @@ void				ft_putnbr_fd(int n, int fd);
 size_t				ft_wstrlen(const wchar_t *str);
 char				*conv_utf8_str(wchar_t *wstr);
 char				*conv_utf8_char(wchar_t wchar, char *str);
-
-/*
-** Bonus
-*/
-
-t_list				*ft_lstinit(void const *content, size_t content_size);
-t_list				*ft_lstnew(void const *content, size_t content_size);
-void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
-void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
-void				ft_lstadd(t_list **alst, t_list *item);
-void				ft_lstadd_tail(t_list **alst, t_list *item);
-void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
-void				ft_lstputstr(t_list *item);
-void				ft_lstputstr_len(t_list *item);
-void				ft_lstmemdel(void *content, size_t content_size);
-t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
-size_t				ft_lstlen(t_list *head);
 
 #endif
