@@ -1,24 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_pow.c                                           :+:      :+:    :+:   */
+/*   ft_floor.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alan <alanbarnett328@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/15 16:57:15 by alan              #+#    #+#             */
-/*   Updated: 2019/03/03 02:13:21 by alan             ###   ########.fr       */
+/*   Created: 2019/03/03 02:15:56 by alan              #+#    #+#             */
+/*   Updated: 2019/03/03 02:16:55 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-long	ft_pow(int a, int b)
+int		ft_floor(double roundee)
 {
-	long	power;
+	int	rounded;
 
-	power = 1;
-	while (b > 0)
-	{
-		power *= a;
-		--b;
-	}
-	return (power);
+	rounded = (int)roundee;
+	return (rounded);
 }
