@@ -6,7 +6,7 @@
 /*   By: abarnett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/17 13:56:25 by abarnett          #+#    #+#             */
-/*   Updated: 2019/03/03 04:04:45 by alan             ###   ########.fr       */
+/*   Updated: 2019/03/05 11:26:53 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@
 # include "ft_mem.h"
 # include "ft_list.h"
 # include "ft_binarytree.h"
+# include "ft_unicode.h"
 # include "ft_math.h"
 
 // # define INTMAX 2147483647
@@ -96,9 +97,6 @@ void				ft_strupper(char *str);
 ** Section Two
 */
 
-char				*ft_strnew(size_t size);
-char				*ft_strinit(size_t size, int c);
-void				ft_strdel(char **as);
 void				ft_strclr(char *s);
 void				ft_striter(char*s, void (*f)(char *));
 void				ft_striteri(char *s, void (*f)(unsigned int, char*));
@@ -123,13 +121,5 @@ char				*ft_itoa(int n);
 char				*ft_itoa_base(int n, int base);
 char				*ft_ftoa(double nb, int precision);
 char				*ft_ftosn(double nb, int precision);
-
-/*
-** Unicode
-*/
-
-size_t				ft_wstrlen(const wchar_t *str);
-char				*conv_utf8_str(wchar_t *wstr);
-char				*conv_utf8_char(wchar_t wchar, char *str);
 
 #endif
