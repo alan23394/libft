@@ -6,21 +6,11 @@
 /*   By: abarnett <alanbarnett328@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/20 17:52:10 by abarnett          #+#    #+#             */
-/*   Updated: 2019/01/02 20:41:28 by abarnett         ###   ########.fr       */
+/*   Updated: 2019/03/05 11:20:27 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-size_t		ft_wstrlen(const wchar_t *str)
-{
-	size_t i;
-
-	i = 0;
-	while (*str++)
-		i++;
-	return (i);
-}
+#include "ft_string.h"
 
 /*
 ** This function figures out how many bits a single wide character will need
