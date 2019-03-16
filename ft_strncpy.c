@@ -6,11 +6,11 @@
 /*   By: abarnett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/14 21:13:52 by abarnett          #+#    #+#             */
-/*   Updated: 2018/12/28 00:46:09 by abarnett         ###   ########.fr       */
+/*   Updated: 2019/03/16 14:07:46 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_mem.h"
 
 char	*ft_strncpy(char *dst, const char *src, size_t len)
 {
