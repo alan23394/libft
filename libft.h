@@ -6,7 +6,7 @@
 /*   By: abarnett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/17 13:56:25 by abarnett          #+#    #+#             */
-/*   Updated: 2019/03/16 13:38:44 by alan             ###   ########.fr       */
+/*   Updated: 2019/03/16 14:03:11 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,8 +57,6 @@ typedef	struct		s_fp
 # define SIG_F (f.lead_zeros + f.len_f)
 # define SIG_I (f.len_i + f.trail_zeros)
 
-char				*ft_strcpy(char *dst, const char *src);
-char				*ft_strncpy(char *dst, const char *src, size_t len);
 char				*ft_strcat(char *s1, const char *s2);
 char				*ft_strncat(char *s1, const char *s2, size_t n);
 size_t				ft_strlcat(char *dst, const char *src, size_t dstsize);
