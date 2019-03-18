@@ -6,7 +6,7 @@
 /*   By: abarnett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/17 13:56:25 by abarnett          #+#    #+#             */
-/*   Updated: 2019/03/18 09:04:37 by alan             ###   ########.fr       */
+/*   Updated: 2019/03/18 09:10:19 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,6 @@ typedef	struct		s_fp
 # define SIG_F (f.lead_zeros + f.len_f)
 # define SIG_I (f.len_i + f.trail_zeros)
 
-int					ft_atoi(char *str);
 
 char				*ft_strsub(const char *s, unsigned int start, size_t len);
 char				*ft_strjoin(const char *s1, const char *s2);
