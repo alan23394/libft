@@ -6,11 +6,11 @@
 /*   By: abarnett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/07 20:38:30 by abarnett          #+#    #+#             */
-/*   Updated: 2018/12/11 21:43:16 by abarnett         ###   ########.fr       */
+/*   Updated: 2019/03/18 11:59:32 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_string.h"
 
 /*
 ** This function appends a character to a string by changing the null terminator

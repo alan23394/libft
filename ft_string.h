@@ -6,7 +6,7 @@
 /*   By: alan <alanbarnett328@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/03 03:13:31 by alan              #+#    #+#             */
-/*   Updated: 2019/03/18 09:24:19 by alan             ###   ########.fr       */
+/*   Updated: 2019/03/18 11:54:42 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 
 char	*ft_strnew(size_t size);
 char	*ft_strinit(size_t size, int c);
-void	ft_strclr(char *s);
 void	ft_strdel(char **as);
 
 size_t	ft_strlen(const char *str);
@@ -36,6 +35,10 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_strequ(const char *s1, const char *s2);
 int		ft_strnequ(const char *s1, const char *s2, size_t n);
 
+char	*ft_strtrim(const char *s);
+void	ft_strclr(char *s);
+void	ft_strupper(char *str);
+void	ft_strapp(char *dst, char c);
 char	*ft_strsub(const char *s, unsigned int start, size_t len);
 char	*ft_strjoin(const char *s1, const char *s2);
 
@@ -49,7 +52,6 @@ char	*ft_strncpy(char *dst, const char *src, size_t len);
 char	*ft_strdup(const char *s1);
 char	*ft_strndup(const char *s1, size_t len);
 
-void	ft_strupper(char *str);
 
 void	ft_striter(char*s, void (*f)(char *));
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));

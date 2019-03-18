@@ -6,11 +6,11 @@
 /*   By: abarnett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/22 20:56:01 by abarnett          #+#    #+#             */
-/*   Updated: 2018/06/02 18:34:25 by abarnett         ###   ########.fr       */
+/*   Updated: 2019/03/18 11:58:46 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_string.h"
 
 char	*ft_strtrim(const char *s)
 {
