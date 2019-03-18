@@ -6,14 +6,14 @@
 #    By: abarnett <alanbarnett328@gmail.com>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/04/17 14:22:04 by abarnett          #+#    #+#              #
-#    Updated: 2019/03/18 12:58:58 by alan             ###   ########.fr        #
+#    Updated: 2019/03/18 13:01:05 by alan             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME :=			libft.a
 CC :=			gcc
 
-SRC_DIR :=		./
+SRC_DIR :=		./srcs
 
 C_SRCS :=		$(wildcard $(SRC_DIR)/*.c)
 C_OBJS :=		$(patsubst %.c,%.o,$(C_SRCS))
