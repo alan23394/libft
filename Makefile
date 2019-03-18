@@ -6,7 +6,7 @@
 #    By: abarnett <alanbarnett328@gmail.com>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/04/17 14:22:04 by abarnett          #+#    #+#              #
-#    Updated: 2019/03/18 13:01:05 by alan             ###   ########.fr        #
+#    Updated: 2019/03/18 13:28:47 by alan             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,9 +38,9 @@ $(NAME): $(C_OBJS)
 -include $(DEPENDS)
 
 clean:
-	@- $(RM) $(C_OBJS)
+	@- $(RM) $(C_OBJS) $(DEPENDS)
 
 fclean: clean
-	@- $(RM) $(NAME) $(DEPENDS)
+	@- $(RM) $(NAME)
 
 re: fclean all
