@@ -36,7 +36,4 @@
 # include "ft_unicode.h"
 # include "ft_math.h"
 
-int					ft_count_words(const char *str, char del);
-char				**ft_strsplit(const char *s, char c);
-
 #endif

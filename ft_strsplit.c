@@ -6,11 +6,13 @@
 /*   By: abarnett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/22 21:14:13 by abarnett          #+#    #+#             */
-/*   Updated: 2018/06/02 18:43:10 by abarnett         ###   ########.fr       */
+/*   Updated: 2019/03/18 12:38:34 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_string.h"
+#include "ft_utils.h"
+#include "ft_mem.h"
 
 char	**ft_strsplit(const char *s, char c)
 {
