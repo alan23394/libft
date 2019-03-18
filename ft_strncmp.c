@@ -6,9 +6,11 @@
 /*   By: abarnett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/23 11:04:00 by abarnett          #+#    #+#             */
-/*   Updated: 2019/03/18 08:01:09 by alan             ###   ########.fr       */
+/*   Updated: 2019/03/18 09:11:39 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stddef.h>
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
