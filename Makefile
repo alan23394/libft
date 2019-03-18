@@ -6,7 +6,7 @@
 #    By: abarnett <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/04/17 14:22:04 by abarnett          #+#    #+#              #
-#    Updated: 2018/06/06 17:27:04 by abarnett         ###   ########.fr        #
+#    Updated: 2019/03/18 07:28:29 by alan             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,7 @@ CFLAGS += -Wall -Wextra -Werror
 .PHONY: all clean fclean re
 
 all: $(NAME)
+	@-ctags -R
 
 $(NAME): $(C_SRCS)
 	$(CC) $(CFLAGS) -c $(C_SRCS)
