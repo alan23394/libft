@@ -1,32 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_numlen_base.c                                   :+:      :+:    :+:   */
+/*   ft_unumlen_base.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abarnett <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: alan <alanbarnett328@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/06/06 16:23:46 by abarnett          #+#    #+#             */
-/*   Updated: 2019/03/18 12:11:52 by alan             ###   ########.fr       */
+/*   Created: 2019/03/18 12:10:29 by alan              #+#    #+#             */
+/*   Updated: 2019/03/18 12:11:19 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-** numlen that works for numbers in any base
+** numlen base that works for unsigned numbers
 ** (for signed numbers, numlen counts the sign (i.e. -42 = 3 digits)
-** (if you care, use absolute value)
 */
 
-size_t	ft_numlen_base(long long num, int base)
+size_t	ft_unumlen_base(unsigned long long num, int base)
 {
 	int length;
 
 	length = 1;
-	if (num < 0)
-	{
-		num *= -1;
-		++length;
-	}
-	while (num >= base)
+	while (num >= (unsigned int)base)
 	{
 		num /= base;
 		++length;

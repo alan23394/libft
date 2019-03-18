@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_numlen.c                                        :+:      :+:    :+:   */
+/*   ft_unumlen.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abarnett <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: alan <alanbarnett328@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/26 10:14:30 by abarnett          #+#    #+#             */
-/*   Updated: 2019/03/18 12:05:35 by alan             ###   ########.fr       */
+/*   Created: 2019/03/18 12:05:01 by alan              #+#    #+#             */
+/*   Updated: 2019/03/18 12:05:06 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-size_t		ft_numlen(long long num)
+size_t		ft_unumlen(unsigned long long num)
 {
 	size_t	length;
 
 	length = 1;
-	while (num >= 10 || num <= -10)
+	while (num >= 10)
 	{
 		num /= 10;
 		++length;
