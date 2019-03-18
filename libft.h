@@ -6,7 +6,7 @@
 /*   By: abarnett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/17 13:56:25 by abarnett          #+#    #+#             */
-/*   Updated: 2019/03/18 12:03:50 by alan             ###   ########.fr       */
+/*   Updated: 2019/03/18 12:14:29 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,6 @@ typedef	struct		s_fp
 
 int					ft_count_words(const char *str, char del);
 char				**ft_strsplit(const char *s, char c);
-char				*ft_itoa(int n);
-char				*ft_itoa_base(int n, int base);
 char				*ft_ftoa(double nb, int precision);
 char				*ft_ftosn(double nb, int precision);
 

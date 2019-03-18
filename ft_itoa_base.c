@@ -6,11 +6,12 @@
 /*   By: exam <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/18 19:45:40 by exam              #+#    #+#             */
-/*   Updated: 2018/06/06 17:10:40 by abarnett         ###   ########.fr       */
+/*   Updated: 2019/03/18 12:18:11 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_string.h"
+#include "ft_utils.h"
 
 static void	append_character(char *dest, char src)
 {

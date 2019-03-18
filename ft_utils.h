@@ -30,6 +30,8 @@ size_t	ft_unumlen(unsigned long long num);
 size_t	ft_numlen_base(long long num, int base);
 size_t	ft_unumlen_base(unsigned long long num, int base);
 
-int	ft_atoi(char *str);
+int		ft_atoi(char *str);
+char	*ft_itoa(int n);
+char	*ft_itoa_base(int n, int base);
 
 #endif
