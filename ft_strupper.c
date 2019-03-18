@@ -6,11 +6,11 @@
 /*   By: abarnett <alanbarnett328@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/11 21:39:57 by abarnett          #+#    #+#             */
-/*   Updated: 2018/12/14 18:28:56 by alan             ###   ########.fr       */
+/*   Updated: 2019/03/18 09:01:13 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_util.h"
 
 /*
 ** Converts a malloced string to uppercase
