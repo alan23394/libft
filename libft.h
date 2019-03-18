@@ -6,7 +6,7 @@
 /*   By: abarnett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/17 13:56:25 by abarnett          #+#    #+#             */
-/*   Updated: 2019/03/18 09:10:19 by alan             ###   ########.fr       */
+/*   Updated: 2019/03/18 09:25:13 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@
 
 # include <stddef.h>
 
+# include "ft_utils.h"
 # include "ft_put.h"
 # include "ft_string.h"
 # include "ft_mem.h"
@@ -58,8 +59,6 @@ typedef	struct		s_fp
 # define SIG_I (f.len_i + f.trail_zeros)
 
 
-char				*ft_strsub(const char *s, unsigned int start, size_t len);
-char				*ft_strjoin(const char *s1, const char *s2);
 char				*ft_strtrim(const char *s);
 int					ft_count_words(const char *str, char del);
 char				**ft_strsplit(const char *s, char c);
