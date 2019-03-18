@@ -6,9 +6,11 @@
 /*   By: alan <alanbarnett328@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/18 12:10:29 by alan              #+#    #+#             */
-/*   Updated: 2019/03/18 12:11:19 by alan             ###   ########.fr       */
+/*   Updated: 2019/03/18 12:17:21 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stddef.h>
 
 /*
 ** numlen base that works for unsigned numbers

@@ -6,12 +6,14 @@
 /*   By: alan <alanbarnett328@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/18 09:02:51 by alan              #+#    #+#             */
-/*   Updated: 2019/03/18 12:12:06 by alan             ###   ########.fr       */
+/*   Updated: 2019/03/18 12:17:02 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_UTILS_H
 # define FT_UTILS_H
+
+# include <stddef.h>
 
 int		ft_isupper(int c);
 int		ft_islower(int c);

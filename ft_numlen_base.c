@@ -6,9 +6,11 @@
 /*   By: abarnett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/06 16:23:46 by abarnett          #+#    #+#             */
-/*   Updated: 2019/03/18 12:11:52 by alan             ###   ########.fr       */
+/*   Updated: 2019/03/18 12:16:34 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stddef.h>
 
 /*
 ** numlen that works for numbers in any base

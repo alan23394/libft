@@ -6,9 +6,11 @@
 /*   By: alan <alanbarnett328@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/18 12:05:01 by alan              #+#    #+#             */
-/*   Updated: 2019/03/18 12:05:06 by alan             ###   ########.fr       */
+/*   Updated: 2019/03/18 12:17:37 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stddef.h>
 
 size_t		ft_unumlen(unsigned long long num)
 {
