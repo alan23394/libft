@@ -6,7 +6,7 @@
 /*   By: abarnett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/17 13:56:25 by abarnett          #+#    #+#             */
-/*   Updated: 2019/03/16 14:03:11 by alan             ###   ########.fr       */
+/*   Updated: 2019/03/18 07:26:44 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,17 +57,6 @@ typedef	struct		s_fp
 # define SIG_F (f.lead_zeros + f.len_f)
 # define SIG_I (f.len_i + f.trail_zeros)
 
-char				*ft_strcat(char *s1, const char *s2);
-char				*ft_strncat(char *s1, const char *s2, size_t n);
-size_t				ft_strlcat(char *dst, const char *src, size_t dstsize);
-char				*ft_strchr(const char *s, int c);
-char				*ft_strrchr(const char *s, int c);
-char				*ft_strstr(const char *haystack, const char *needle);
-char				*ft_strnstr(const char *haystack, const char *needle,\
-						size_t len);
-int					ft_strcmp(const char *s1, const char *s2);
-int					ft_strcmp_rev(const char *s1, const char *s2);
-int					ft_strncmp(const char *s1, const char *s2, size_t n);
 int					ft_isspace(int c);
 int					ft_atoi(char *str);
 int					ft_isupper(int c);
