@@ -6,11 +6,11 @@
 /*   By: abarnett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/22 20:49:53 by abarnett          #+#    #+#             */
-/*   Updated: 2018/06/02 19:09:37 by abarnett         ###   ########.fr       */
+/*   Updated: 2019/03/18 08:47:16 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_string.h"
 
 int	ft_strnequ(const char *s1, const char *s2, size_t n)
 {
