@@ -6,7 +6,7 @@
 /*   By: abarnett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/17 13:56:25 by abarnett          #+#    #+#             */
-/*   Updated: 2019/03/18 08:46:37 by alan             ###   ########.fr       */
+/*   Updated: 2019/03/18 08:57:34 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,6 @@ char				*ft_strsub(const char *s, unsigned int start, size_t len);
 char				*ft_strjoin(const char *s1, const char *s2);
 char				*ft_strtrim(const char *s);
 int					ft_count_words(const char *str, char del);
-size_t				ft_dstrlen(const char *str, char del);
 char				**ft_strsplit(const char *s, char c);
 size_t				ft_numlen_sign(long long num);
 size_t				ft_numlen(long long num);

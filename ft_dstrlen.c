@@ -6,11 +6,11 @@
 /*   By: abarnett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/26 12:19:17 by abarnett          #+#    #+#             */
-/*   Updated: 2019/03/02 21:35:32 by alan             ###   ########.fr       */
+/*   Updated: 2019/03/18 08:57:46 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stddef.h>
 
 size_t	ft_dstrlen(const char *str, char del)
 {

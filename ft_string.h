@@ -6,7 +6,7 @@
 /*   By: alan <alanbarnett328@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/03 03:13:31 by alan              #+#    #+#             */
-/*   Updated: 2019/03/18 08:46:29 by alan             ###   ########.fr       */
+/*   Updated: 2019/03/18 08:57:33 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ void	ft_strclr(char *s);
 void	ft_strdel(char **as);
 
 size_t	ft_strlen(const char *str);
+size_t	ft_dstrlen(const char *str, char del);
 
 char	*ft_strcat(char *s1, const char *s2);
 char	*ft_strncat(char *s1, const char *s2, size_t n);
