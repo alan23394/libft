@@ -6,11 +6,11 @@
 /*   By: abarnett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/22 11:03:49 by abarnett          #+#    #+#             */
-/*   Updated: 2019/01/17 00:55:15 by abarnett         ###   ########.fr       */
+/*   Updated: 2019/03/18 08:00:59 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_string.h"
 
 /*
 ** Does the exact same thing as regular strcmp, but returns the reverse result
