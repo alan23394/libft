@@ -6,7 +6,7 @@
 /*   By: abarnett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/17 13:56:25 by abarnett          #+#    #+#             */
-/*   Updated: 2019/03/18 12:14:29 by alan             ###   ########.fr       */
+/*   Updated: 2019/03/18 12:28:13 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,31 +36,7 @@
 # include "ft_unicode.h"
 # include "ft_math.h"
 
-// # define INTMAX 2147483647
-// # define INTMIN -2147483648
-
-typedef union		u_double
-{
-	double			d;
-	long			l;
-}					t_double;
-
-typedef	struct		s_fp
-{
-	long			integral;
-	long			fraction;
-	int				len_i;
-	int				trail_zeros;
-	int				lead_zeros;
-	int				len_f;
-}					t_fp;
-
-# define SIG_F (f.lead_zeros + f.len_f)
-# define SIG_I (f.len_i + f.trail_zeros)
-
 int					ft_count_words(const char *str, char del);
 char				**ft_strsplit(const char *s, char c);
-char				*ft_ftoa(double nb, int precision);
-char				*ft_ftosn(double nb, int precision);
 
 #endif

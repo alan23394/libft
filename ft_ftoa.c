@@ -6,11 +6,13 @@
 /*   By: alan <alanbarnett328@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/15 23:37:04 by alan              #+#    #+#             */
-/*   Updated: 2019/01/02 21:31:59 by abarnett         ###   ########.fr       */
+/*   Updated: 2019/03/18 12:27:15 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_string.h"
+#include "ft_utils.h"
+#include "ft_math.h"
 
 static void		ft_nbrcpy_p(long n, int precision, char *s)
 {
