@@ -1,26 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abarnett <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: alan <alanbarnett328@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/17 13:56:25 by abarnett          #+#    #+#             */
-/*   Updated: 2019/03/19 00:09:41 by alan             ###   ########.fr       */
+/*   Created: 2019/03/18 13:32:04 by alan              #+#    #+#             */
+/*   Updated: 2019/03/18 13:59:06 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-# include "ft_utils.h"
-# include "ft_put.h"
-# include "get_next_line.h"
-# include "ft_string.h"
-# include "ft_mem.h"
-# include "ft_list.h"
-# include "ft_binarytree.h"
-# include "ft_unicode.h"
-# include "ft_math.h"
+int		get_next_line(const int fd, char **line);
 
 #endif
