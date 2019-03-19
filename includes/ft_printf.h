@@ -6,7 +6,7 @@
 /*   By: abarnett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/09 14:47:21 by abarnett          #+#    #+#             */
-/*   Updated: 2019/03/19 01:27:06 by alan             ###   ########.fr       */
+/*   Updated: 2019/03/19 02:07:02 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,7 @@
 
 # include <stdarg.h>
 # include "libft.h"
-
-# define SHARP 0x1
-# define ZERO 0x2
-# define MINUS 0x4
-# define PLUS 0x8
-# define SPACE 0x10
-
-# define CONVS "cCsS%dDiuUboOxXpfFeE"
-
-typedef struct		s_format
-{
-	unsigned char	flags;
-	int				width;
-	int				precision;
-	char			length;
-	char			conv;
-}					t_format;
+# include "ft_printf_format.h"
 
 /*
 ** parse functions
