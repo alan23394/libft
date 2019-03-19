@@ -6,12 +6,13 @@
 /*   By: abarnett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/09 14:26:02 by abarnett          #+#    #+#             */
-/*   Updated: 2019/03/19 01:13:52 by alan             ###   ########.fr       */
+/*   Updated: 2019/03/19 01:29:03 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include "ft_printf.h"
+#include "ft_printf_flags.h"
 
 /*
 ** Must include:

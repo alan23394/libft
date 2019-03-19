@@ -6,11 +6,12 @@
 /*   By: abarnett <alanbarnett328@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/11 21:34:21 by abarnett          #+#    #+#             */
-/*   Updated: 2019/03/19 01:13:34 by alan             ###   ########.fr       */
+/*   Updated: 2019/03/19 01:31:18 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include "ft_printf_flags.h"
 
 /*
 ** This function sets the width to the full size of the string, and the

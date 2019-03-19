@@ -6,7 +6,7 @@
 /*   By: abarnett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/09 14:47:21 by abarnett          #+#    #+#             */
-/*   Updated: 2019/03/19 01:17:31 by alan             ###   ########.fr       */
+/*   Updated: 2019/03/19 01:27:06 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,24 +32,6 @@ typedef struct		s_format
 	char			length;
 	char			conv;
 }					t_format;
-
-/*
-** function pointer functions
-*/
-
-char				*flag_char(t_format *fmt, va_list valist);
-char				*flag_wchar(t_format *fmt, va_list valist);
-char				*flag_string(t_format *fmt, va_list valist);
-char				*flag_wstr(t_format *fmt, va_list valist);
-char				*flag_percent(t_format *fmt);
-char				*flag_int(t_format *fmt, va_list valist);
-char				*flag_uint(t_format *fmt, va_list valist);
-char				*flag_bin(t_format *fmt, va_list valist);
-char				*flag_oct(t_format *fmt, va_list valist);
-char				*flag_hex(t_format *fmt, va_list valist);
-char				*flag_pointer(t_format *fmt, va_list valist);
-char				*flag_float(t_format *fmt, va_list valist);
-char				*flag_scientific(t_format *fmt, va_list valist);
 
 /*
 ** parse functions
