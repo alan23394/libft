@@ -6,11 +6,11 @@
 /*   By: abarnett <alanbarnett328@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/11 21:34:21 by abarnett          #+#    #+#             */
-/*   Updated: 2018/12/31 06:09:07 by abarnett         ###   ########.fr       */
+/*   Updated: 2019/03/19 01:13:34 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 /*
 ** This function sets the width to the full size of the string, and the

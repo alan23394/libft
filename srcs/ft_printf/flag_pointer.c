@@ -6,11 +6,11 @@
 /*   By: abarnett <alanbarnett328@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/11 21:30:54 by abarnett          #+#    #+#             */
-/*   Updated: 2019/01/05 22:13:49 by abarnett         ###   ########.fr       */
+/*   Updated: 2019/03/19 01:13:25 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 /*
 ** This function adds the flags from a format struct to a string
