@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_printfd.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abarnett <alanbarnett328@gmail.com>        +#+  +:+       +#+        */
+/*   By: alan <alanbarnett328@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/05 23:12:22 by abarnett          #+#    #+#             */
-/*   Updated: 2019/03/20 13:34:23 by alan             ###   ########.fr       */
+/*   Created: 2019/03/20 13:34:27 by alan              #+#    #+#             */
+/*   Updated: 2019/03/20 13:34:46 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,17 @@
 #include <stdarg.h>
 
 /*
-** Make a variable argument list
+** Make a variable arguments list
 ** Use ft_vprintfd for the rest
 */
 
-int		ft_printf(const char *format, ...)
+int		ft_printfd(int fd, const char *format, ...)
 {
 	va_list		valist;
 	size_t		total_len;
 
 	va_start(valist, format);
-	total_len = ft_vprintfd(1, format, valist);
+	total_len = ft_vprintfd(fd, format, valist);
 	va_end(valist);
 	return (total_len);
 }
