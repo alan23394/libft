@@ -67,17 +67,13 @@ char				*flag_string(t_format *fmt, va_list valist)
 	return (newstr);
 }
 
-/*
-** Add this back in at the top when unicode for characters isn't broken
-**	if (fmt->length == 'l')
-**		return (flag_wchar(fmt, valist));
-*/
-
 char				*flag_char(t_format *fmt, va_list valist)
 {
 	char	c;
 	char	*newstr;
 
+	if (fmt->length == 'l')
+		return (flag_wchar(fmt, valist));
 	c = (char)va_arg(valist, int);
 	if (fmt->width < 1)
 		fmt->width = 1;
