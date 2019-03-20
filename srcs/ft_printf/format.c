@@ -1,35 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_format.h                                 :+:      :+:    :+:   */
+/*   format.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alan <alanbarnett328@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/19 02:00:08 by alan              #+#    #+#             */
-/*   Updated: 2019/03/20 14:01:22 by alan             ###   ########.fr       */
+/*   Created: 2019/03/20 14:00:48 by alan              #+#    #+#             */
+/*   Updated: 2019/03/20 14:03:10 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_FORMAT_H
-# define FT_PRINTF_FORMAT_H
+#include "ft_printf_format.h"
 
-# define SHARP 0x1
-# define ZERO 0x2
-# define MINUS 0x4
-# define PLUS 0x8
-# define SPACE 0x10
-
-# define CONVS "cCsS%dDiuUboOxXpfFeE"
-
-typedef struct		s_format
+void	format_init(t_format *fmt)
 {
-	unsigned char	flags;
-	int				width;
-	int				precision;
-	char			length;
-	char			conv;
-}					t_format;
-
-void				format_init(t_format *fmt);
-
-#endif
+	fmt->flags = 0;
+	fmt->width = 0;
+	fmt->precision = -1;
+	fmt->length = 0;
+	fmt->conv = 0;
+}

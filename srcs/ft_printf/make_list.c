@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "ft_printf_format.h"
 #include "ft_printf_flags.h"
 #include "ft_printf_parse.h"
 
@@ -45,15 +45,6 @@
 **		%k:		date in ISO format
 **	colors, fd, etc..
 */
-
-static void		init(t_format *fmt)
-{
-	fmt->flags = 0;
-	fmt->width = 0;
-	fmt->precision = -1;
-	fmt->length = 0;
-	fmt->conv = 0;
-}
 
 /*
 ** Static function to house my dispatch table, which takes the index from the
@@ -110,7 +101,7 @@ static char		*parse(const char **format, va_list valist, size_t *len)
 	char		*ret;
 	int			index;
 
-	init(&fmt_struct);
+	format_init(&fmt_struct);
 	ret = 0;
 	get_flags(format, &fmt_struct);
 	get_width_precis(format, &fmt_struct, valist);
