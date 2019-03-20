@@ -6,7 +6,7 @@
 /*   By: abarnett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/09 14:47:21 by abarnett          #+#    #+#             */
-/*   Updated: 2019/03/20 13:34:08 by alan             ###   ########.fr       */
+/*   Updated: 2019/03/20 14:02:51 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,6 @@
 # include <stdarg.h>
 # include "libft.h"
 # include "ft_printf_format.h"
-
-/*
-** parse functions
-*/
-
-int					get_conversion(const char **format, t_format *fmt_struct);
-void				get_length(const char **format, t_format *fmt_struct);
-void				get_width_precis(const char **format, t_format *fmt_struct,
-						va_list valist);
-void				get_flags(const char **format, t_format *fmt_struct);
 
 /*
 ** make list functions
