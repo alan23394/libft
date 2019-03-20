@@ -6,7 +6,7 @@
 /*   By: abarnett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/21 21:38:40 by abarnett          #+#    #+#             */
-/*   Updated: 2019/03/20 14:05:04 by alan             ###   ########.fr       */
+/*   Updated: 2019/03/20 15:02:32 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,17 +56,17 @@
 */
 
 /*
-**	The position of the characters in the flags string represent
-**	the index of their function in the function pointer array.
+**	This function sets the conversion character from the format string in the
+**	format struct if it's valid, and if it's not, it sets it to 0.
+**	The conversion character is used as the index to the flags jump table.
 **	If you would like to add a new function with a new character,
 **		add your function to the srcs/ft_printf/flags directory,
 **			add a prototype to the ft_printf_flags header file too,
-**		add the character to the end of the list (found in the header file),
-**		increase the jump table index count (found in printf.c:dispatch),
-**		add your function name to the jump table.
+**		add the character to the end of CONVS (in ft_printf_format.h),
+**		add your function name and character to the jump table.
 */
 
-int					get_conversion(const char **format, t_format *fmt_struct)
+void	get_conversion(const char **format, t_format *fmt_struct)
 {
 	const char	*flags;
 	char		*index;
@@ -76,9 +76,11 @@ int					get_conversion(const char **format, t_format *fmt_struct)
 	{
 		(*format)++;
 		fmt_struct->conv = *index;
-		return (index - flags);
 	}
-	return (-1);
+	else
+	{
+		fmt_struct->conv = 0;
+	}
 }
 
 /*
@@ -88,7 +90,7 @@ int					get_conversion(const char **format, t_format *fmt_struct)
 **	If the length "hh" or "ll" is used, it is replaced with "H" or "L".
 */
 
-void				get_length(const char **format, t_format *fmt_struct)
+void	get_length(const char **format, t_format *fmt_struct)
 {
 	const char	*flags;
 	const char	*index;
@@ -125,8 +127,8 @@ void				get_length(const char **format, t_format *fmt_struct)
 **	that checks if atoi was able to pull one.
 */
 
-void				get_width_precis(const char **format, t_format *fmt_struct,
-						va_list valist)
+void	get_width_precis(const char **format, t_format *fmt_struct,
+			va_list valist)
 {
 	if (**format)
 	{
@@ -167,7 +169,7 @@ void				get_width_precis(const char **format, t_format *fmt_struct,
 **	The second to last line disables the ' ' flag if the + flag is also present.
 */
 
-void				get_flags(const char **format, t_format *fmt_struct)
+void	get_flags(const char **format, t_format *fmt_struct)
 {
 	const char		*flags;
 	const char		*cur;

@@ -6,7 +6,7 @@
 /*   By: abarnett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/09 14:26:02 by abarnett          #+#    #+#             */
-/*   Updated: 2019/03/20 14:02:51 by alan             ###   ########.fr       */
+/*   Updated: 2019/03/20 15:08:01 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,43 +47,39 @@
 */
 
 /*
-** Static function to house my dispatch table, which takes the index from the
-** conversion, the fmt_struct, and the valist. it returns the string that the
-** conversion function makes.
+** Static function to house my dispatch table, which takes the fmt_struct, and
+** the valist. It returns the string that the conversion function makes.
 **
-** It doesn't need to check for a valid index, that is done in the calling
-** function
-**
-** Current copy of flags string: (UPDATE IF YOU CHANGE IT)
-** flags = "cCsS%dDiuUboOxXpfFeE";
+** It doesn't need to make sure the character is valid, that is done in the
+** calling function.
 */
 
-static char		*dispatch(int index, t_format *fmt_struct, va_list valist)
+static char		*dispatch(t_format *fmt_struct, va_list valist)
 {
-	static char	*(*p[])() = {
-		[0] = flag_char,
-		[1] = flag_char,
-		[2] = flag_string,
-		[3] = flag_wstr,
-		[4] = flag_percent,
-		[5] = flag_int,
-		[6] = flag_int,
-		[7] = flag_int,
-		[8] = flag_uint,
-		[9] = flag_uint,
-		[10] = flag_bin,
-		[11] = flag_oct,
-		[12] = flag_oct,
-		[13] = flag_hex,
-		[14] = flag_hex,
-		[15] = flag_pointer,
-		[16] = flag_float,
-		[17] = flag_float,
-		[18] = flag_scientific,
-		[19] = flag_scientific,
+	static char	*(*p[127])() = {
+		['c'] = flag_char,
+		['C'] = flag_wchar,
+		['s'] = flag_string,
+		['S'] = flag_wstr,
+		['%'] = flag_percent,
+		['d'] = flag_int,
+		['D'] = flag_int,
+		['i'] = flag_int,
+		['u'] = flag_uint,
+		['U'] = flag_uint,
+		['b'] = flag_bin,
+		['o'] = flag_oct,
+		['O'] = flag_oct,
+		['x'] = flag_hex,
+		['X'] = flag_hex,
+		['p'] = flag_pointer,
+		['f'] = flag_float,
+		['F'] = flag_float,
+		['e'] = flag_scientific,
+		['E'] = flag_scientific,
 	};
 
-	return (p[index](fmt_struct, valist));
+	return (p[(int)fmt_struct->conv](fmt_struct, valist));
 }
 
 /*
@@ -98,22 +94,20 @@ static char		*dispatch(int index, t_format *fmt_struct, va_list valist)
 static char		*parse(const char **format, va_list valist, size_t *len)
 {
 	t_format	fmt_struct;
-	char		*ret;
-	int			index;
+	char		*str;
 
 	format_init(&fmt_struct);
-	ret = 0;
 	get_flags(format, &fmt_struct);
 	get_width_precis(format, &fmt_struct, valist);
 	get_length(format, &fmt_struct);
-	index = get_conversion(format, &fmt_struct);
-	if (index != -1)
+	get_conversion(format, &fmt_struct);
+	if (fmt_struct.conv)
 	{
-		ret = dispatch(index, &fmt_struct, valist);
-		if (ret)
+		str = dispatch(&fmt_struct, valist);
+		if (str)
 			*len = (size_t)fmt_struct.width;
 	}
-	return (ret);
+	return (str);
 }
 
 /*
