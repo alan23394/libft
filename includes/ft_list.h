@@ -6,7 +6,7 @@
 /*   By: alan <alanbarnett328@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/03 02:32:21 by alan              #+#    #+#             */
-/*   Updated: 2019/03/03 03:56:01 by alan             ###   ########.fr       */
+/*   Updated: 2019/03/20 13:58:20 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,7 @@ void				ft_lstputstr(t_list *item);
 void				ft_lstputstr_len(t_list *item);
 
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *item));
+
+char				*ft_lstcomb_str(t_list *list, int size_of_list);
 
 #endif

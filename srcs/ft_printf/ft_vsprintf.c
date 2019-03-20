@@ -6,11 +6,12 @@
 /*   By: alan <alanbarnett328@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/20 13:38:35 by alan              #+#    #+#             */
-/*   Updated: 2019/03/20 13:39:34 by alan             ###   ########.fr       */
+/*   Updated: 2019/03/20 14:04:05 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include "ft_list.h"
 #include <stdarg.h>
 
 /*
@@ -28,7 +29,7 @@ int		ft_vsprintf(char **str, const char *format, va_list	valist)
 
 	strings = 0;
 	total_len = make_list(&strings, format, valist);
-	*str = combine_list(strings, total_len);
+	*str = ft_lstcomb_str(strings, total_len);
 	ft_lstdel(&strings, ft_lstmemdel);
 	return (total_len);
 }

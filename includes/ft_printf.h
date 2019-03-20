@@ -33,7 +33,6 @@ void				get_flags(const char **format, t_format *fmt_struct);
 
 size_t				make_list(t_list **list, const char *format,
 							va_list valist);
-char				*combine_list(t_list *list, int size_of_list);
 
 /*
 ** printf functions
