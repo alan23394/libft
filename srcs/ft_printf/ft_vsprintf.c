@@ -6,13 +6,14 @@
 /*   By: alan <alanbarnett328@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/20 13:38:35 by alan              #+#    #+#             */
-/*   Updated: 2019/03/20 14:04:05 by alan             ###   ########.fr       */
+/*   Updated: 2019/03/20 15:26:49 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "ft_printf_parse.h"
 #include "ft_list.h"
 #include <stdarg.h>
+#include <stddef.h>
 
 /*
 ** Takes an already started variable argument list

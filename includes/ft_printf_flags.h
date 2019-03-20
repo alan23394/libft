@@ -6,14 +6,14 @@
 /*   By: alan <alanbarnett328@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/19 01:25:25 by alan              #+#    #+#             */
-/*   Updated: 2019/03/19 01:29:56 by alan             ###   ########.fr       */
+/*   Updated: 2019/03/20 15:14:31 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_FLAGS_H
 # define FT_PRINTF_FLAGS_H
 
-# include "ft_printf.h"
+# include <stdarg.h>
 
 /*
 ** Flag functions for the different conversion specifiers (%s, %d, etc)

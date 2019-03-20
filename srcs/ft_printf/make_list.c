@@ -6,13 +6,17 @@
 /*   By: abarnett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/09 14:26:02 by abarnett          #+#    #+#             */
-/*   Updated: 2019/03/20 15:08:01 by alan             ###   ########.fr       */
+/*   Updated: 2019/03/20 15:19:23 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf_format.h"
 #include "ft_printf_flags.h"
 #include "ft_printf_parse.h"
+#include "ft_utils.h"
+#include "ft_string.h"
+#include "ft_list.h"
+
 
 /*
 ** Must include:

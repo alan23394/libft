@@ -6,12 +6,14 @@
 /*   By: alan <alanbarnett328@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/20 13:35:59 by alan              #+#    #+#             */
-/*   Updated: 2019/03/20 13:40:09 by alan             ###   ########.fr       */
+/*   Updated: 2019/03/20 15:26:36 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include "ft_string.h"
 #include <stdarg.h>
+#include <stddef.h>
 #include <unistd.h>
 
 /*

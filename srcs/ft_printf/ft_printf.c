@@ -6,12 +6,13 @@
 /*   By: abarnett <alanbarnett328@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/05 23:12:22 by abarnett          #+#    #+#             */
-/*   Updated: 2019/03/20 13:34:23 by alan             ###   ########.fr       */
+/*   Updated: 2019/03/20 15:26:01 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include <stdarg.h>
+#include <stddef.h>
 
 /*
 ** Make a variable argument list
