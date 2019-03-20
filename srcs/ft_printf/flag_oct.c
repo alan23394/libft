@@ -6,11 +6,16 @@
 /*   By: alan <alanbarnett328@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/10 17:27:01 by alan              #+#    #+#             */
-/*   Updated: 2019/03/19 01:13:20 by alan             ###   ########.fr       */
+/*   Updated: 2019/03/20 11:45:01 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "ft_printf_format.h"
+#include "ft_utils.h"
+#include "ft_string.h"
+#include "ft_math.h"
+#include <stdarg.h>
+
 
 /*
 ** Figures out the size of the number to be pulled from va_arg

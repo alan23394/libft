@@ -6,11 +6,16 @@
 /*   By: abarnett <alanbarnett328@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/31 01:16:24 by abarnett          #+#    #+#             */
-/*   Updated: 2019/03/19 01:13:44 by alan             ###   ########.fr       */
+/*   Updated: 2019/03/20 12:47:17 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "ft_printf_format.h"
+#include "ft_unicode.h"
+#include "ft_utils.h"
+#include "ft_string.h"
+#include "ft_math.h"
+#include <stdarg.h>
 
 /*
 ** This function adds extra spaces on the left or right size of a string, as
