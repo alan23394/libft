@@ -6,11 +6,14 @@
 /*   By: abarnett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/21 21:38:40 by abarnett          #+#    #+#             */
-/*   Updated: 2019/03/19 01:13:55 by alan             ###   ########.fr       */
+/*   Updated: 2019/03/20 14:05:04 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "ft_printf_format.h"
+#include "ft_string.h"
+#include "ft_utils.h"
+#include <stdarg.h>
 
 /*
 ** This function (commented out) will print the parameters that were used to
@@ -56,8 +59,8 @@
 **	The position of the characters in the flags string represent
 **	the index of their function in the function pointer array.
 **	If you would like to add a new function with a new character,
-**		add your function to the srcs/ft_printf/ directory,
-**			add a prototype to the libftprintf header file too,
+**		add your function to the srcs/ft_printf/flags directory,
+**			add a prototype to the ft_printf_flags header file too,
 **		add the character to the end of the list (found in the header file),
 **		increase the jump table index count (found in printf.c:dispatch),
 **		add your function name to the jump table.
