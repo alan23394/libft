@@ -6,7 +6,7 @@
 #    By: abarnett <alanbarnett328@gmail.com>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/04/17 14:22:04 by abarnett          #+#    #+#              #
-#    Updated: 2019/03/21 03:17:30 by alan             ###   ########.fr        #
+#    Updated: 2019/03/21 12:14:46 by alan             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,7 @@ MODULES_DIR :=	./modules
 C_SRCS :=		$(wildcard $(SRC_DIR)/*.c)
 INCLUDE_DIRS :=	-I./includes
 
+include $(MODULES_DIR)/ft_put.mk
 include $(MODULES_DIR)/ft_string.mk
 include $(MODULES_DIR)/ft_math.mk
 include $(MODULES_DIR)/ft_printf.mk
