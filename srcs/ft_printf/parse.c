@@ -6,7 +6,7 @@
 /*   By: abarnett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/21 21:38:40 by abarnett          #+#    #+#             */
-/*   Updated: 2019/03/20 15:02:32 by alan             ###   ########.fr       */
+/*   Updated: 2019/03/20 15:42:53 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@
 **		add your function to the srcs/ft_printf/flags directory,
 **			add a prototype to the ft_printf_flags header file too,
 **		add the character to the end of CONVS (in ft_printf_format.h),
-**		add your function name and character to the jump table.
+**		add your function name and character to the jump table in make_list.c.
 */
 
 void	get_conversion(const char **format, t_format *fmt_struct)
