@@ -6,7 +6,7 @@
 #    By: abarnett <alanbarnett328@gmail.com>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/04/17 14:22:04 by abarnett          #+#    #+#              #
-#    Updated: 2019/03/21 02:46:06 by alan             ###   ########.fr        #
+#    Updated: 2019/03/21 03:00:54 by alan             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,7 @@ MODULES_DIR :=	./modules
 C_SRCS :=		$(wildcard $(SRC_DIR)/*.c)
 INCLUDE_DIRS :=	-I./includes
 
+include $(MODULES_DIR)/ft_string.mk
 include $(MODULES_DIR)/ft_printf.mk
 
 CFLAGS +=		-g -Wall -Wextra -Werror $(INCLUDE_DIRS)
