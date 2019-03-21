@@ -6,7 +6,7 @@
 #    By: abarnett <alanbarnett328@gmail.com>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/04/17 14:22:04 by abarnett          #+#    #+#              #
-#    Updated: 2019/03/21 03:11:43 by alan             ###   ########.fr        #
+#    Updated: 2019/03/21 03:17:30 by alan             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,7 @@ INCLUDE_DIRS :=	-I./includes
 include $(MODULES_DIR)/ft_string.mk
 include $(MODULES_DIR)/ft_math.mk
 include $(MODULES_DIR)/ft_printf.mk
+include $(MODULES_DIR)/ft_list.mk
 include $(MODULES_DIR)/ft_binarytree.mk
 
 CFLAGS +=		-g -Wall -Wextra -Werror $(INCLUDE_DIRS)
