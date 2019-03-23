@@ -6,7 +6,7 @@
 #    By: abarnett <alanbarnett328@gmail.com>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/04/17 14:22:04 by abarnett          #+#    #+#              #
-#    Updated: 2019/03/23 06:30:45 by alan             ###   ########.fr        #
+#    Updated: 2019/03/23 06:37:59 by alan             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,8 +43,8 @@ all: $(NAME)
 	@ctags -R
 
 $(NAME): $(shell find $(SRC_DIR) -name "*.c") | modules
-	@if [ $(QUIET) -eq 0 ]; then\
-		echo -ne "$(COMPILE_COLOR)Creating $(NAME_COLOR)$(NAME) $(DOTS_COLOR)";\
+	@if [ $(QUIET) -eq 0 ]; then echo -ne\
+		"$(COMPILE_COLOR)Creating $(NAME_COLOR)$(NAME) $(DOTS_COLOR)";\
 		fi
 	@ar rc $(NAME) $(shell find $(SRC_DIR) -name "*.o" -print)
 	@if [ $(QUIET) -eq 0 ]; then echo -n "."; fi
@@ -59,8 +59,8 @@ clean:
 	@$(foreach MOD, $(MODULES),make --no-print-directory -f $(MOD).mk clean;)
 
 fclean: clean
-	@if [ $(QUIET) -eq 0 ]; then\
-		echo -e "$(DELETE_COLOR)Deleting $(NAME_COLOR)$(NAME)";\
+	@if [ $(QUIET) -eq 0 ]; then echo -e\
+		"$(DELETE_COLOR)Deleting $(NAME_COLOR)$(NAME)";\
 		fi
 	@$(RM) $(NAME)
 
