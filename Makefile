@@ -6,17 +6,20 @@
 #    By: abarnett <alanbarnett328@gmail.com>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/04/17 14:22:04 by abarnett          #+#    #+#              #
-#    Updated: 2019/03/23 05:52:26 by alan             ###   ########.fr        #
+#    Updated: 2019/03/23 06:30:45 by alan             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # **************************************************************************** #
 # Configure options
 
+# Include default options
 include config.mk
 
+# Name of output library
 NAME :=		libft.a
 
+# Modules to compile
 MODULES :=	ft_utils\
 			ft_mem\
 			ft_string\
@@ -31,30 +34,34 @@ MODULES :=	ft_utils\
 # Don't change below here
 # **************************************************************************** #
 
-# Append module dir to each module
+# Attach module dir to each module
 MODULES :=	$(foreach MOD, $(MODULES), $(MODULES_DIR)/$(MOD))
 
 .PHONY:		all modules
 
 all: $(NAME)
-	@ ctags -R
+	@ctags -R
 
 $(NAME): $(shell find $(SRC_DIR) -name "*.c") | modules
-	@ echo -ne "$(COMPILE_COLOR)Creating $(NAME_COLOR)$(NAME) $(DOTS_COLOR)"
-	@ ar rc $(NAME) $(shell find $(SRC_DIR) -name "*.o" -print)
-	@ echo -n "."
-	@ ranlib $(NAME)
-	@ echo -n "."
-	@ echo -e " $(FINISH_COLOR)done\e[m"
+	@if [ $(QUIET) -eq 0 ]; then\
+		echo -ne "$(COMPILE_COLOR)Creating $(NAME_COLOR)$(NAME) $(DOTS_COLOR)";\
+		fi
+	@ar rc $(NAME) $(shell find $(SRC_DIR) -name "*.o" -print)
+	@if [ $(QUIET) -eq 0 ]; then echo -n "."; fi
+	@ranlib $(NAME)
+	@if [ $(QUIET) -eq 0 ]; then echo -n "."; fi
+	@if [ $(QUIET) -eq 0 ]; then echo -e " $(FINISH_COLOR)done\e[m"; fi
 
 modules:
-	@ $(foreach MOD, $(MODULES),make --no-print-directory -f $(MOD).mk;)
+	@$(foreach MOD, $(MODULES),make --no-print-directory -f $(MOD).mk;)
 
 clean:
-	@ $(foreach MOD, $(MODULES),make --no-print-directory -f $(MOD).mk clean;)
+	@$(foreach MOD, $(MODULES),make --no-print-directory -f $(MOD).mk clean;)
 
 fclean: clean
-	@ echo -e "$(DELETE_COLOR)Deleting $(NAME_COLOR)$(NAME)"
-	@ $(RM) $(NAME)
+	@if [ $(QUIET) -eq 0 ]; then\
+		echo -e "$(DELETE_COLOR)Deleting $(NAME_COLOR)$(NAME)";\
+		fi
+	@$(RM) $(NAME)
 
 re: fclean $(NAME)
