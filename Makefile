@@ -6,7 +6,7 @@
 #    By: abarnett <alanbarnett328@gmail.com>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/04/17 14:22:04 by abarnett          #+#    #+#              #
-#    Updated: 2019/03/23 06:37:59 by alan             ###   ########.fr        #
+#    Updated: 2019/03/23 06:46:13 by alan             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,7 +50,9 @@ $(NAME): $(shell find $(SRC_DIR) -name "*.c") | modules
 	@if [ $(QUIET) -eq 0 ]; then echo -n "."; fi
 	@ranlib $(NAME)
 	@if [ $(QUIET) -eq 0 ]; then echo -n "."; fi
-	@if [ $(QUIET) -eq 0 ]; then echo -e " $(FINISH_COLOR)done\e[m"; fi
+	@if [ $(QUIET) -eq 0 ]; then echo -e\
+		" $(FINISH_COLOR)done$(CLEAR_COLOR)";\
+		fi
 
 modules:
 	@$(foreach MOD, $(MODULES),make --no-print-directory -f $(MOD).mk;)
@@ -60,7 +62,7 @@ clean:
 
 fclean: clean
 	@if [ $(QUIET) -eq 0 ]; then echo -e\
-		"$(DELETE_COLOR)Deleting $(NAME_COLOR)$(NAME)";\
+		"$(DELETE_COLOR)Deleting $(NAME_COLOR)$(NAME)$(CLEAR_COLOR)";\
 		fi
 	@$(RM) $(NAME)
 

@@ -6,7 +6,7 @@
 #    By: alan <alanbarnett328@gmail.com>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/03/23 01:51:49 by alan              #+#    #+#              #
-#    Updated: 2019/03/23 06:39:34 by alan             ###   ########.fr        #
+#    Updated: 2019/03/23 06:50:17 by alan             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,5 +35,6 @@ CFLAGS +=			-g -Wall -Wextra -Werror $(INCLUDE)
 COMPILE_COLOR :=	\e[1;32m
 NAME_COLOR :=		\e[1;33m
 DOTS_COLOR :=		\e[1;35m
-FINISH_COLOR :=		\e[0;32m
+FINISH_COLOR :=		\e[1;36m
 DELETE_COLOR :=		\e[1;31m
+CLEAR_COLOR :=		\e[m
