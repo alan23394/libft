@@ -6,7 +6,7 @@
 #    By: abarnett <alanbarnett328@gmail.com>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/04/17 14:22:04 by abarnett          #+#    #+#              #
-#    Updated: 2019/03/23 04:24:05 by alan             ###   ########.fr        #
+#    Updated: 2019/03/23 05:35:17 by alan             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,15 +38,13 @@ $(NAME): $(shell find $(SRC_DIR) -name "*.c") | modules
 	@echo -e " $(FINISH_COLOR)done\e[m"
 
 modules:
-	@$(foreach mod, $(MODULES),make --no-print-directory -f $(mod).mk;)
+	@$(foreach MOD, $(MODULES),make --no-print-directory -f $(MOD).mk;)
 
 clean:
-	@$(foreach mod, $(MODULES),make --no-print-directory -f $(mod).mk clean;)
+	@$(foreach MOD, $(MODULES),make --no-print-directory -f $(MOD).mk clean;)
 
 fclean: clean
 	@echo -e "$(DELETE_COLOR)Deleting $(NAME_COLOR)$(NAME)"
 	@$(RM) $(NAME)
 
 re: fclean $(NAME)
-
-#include get_next_line.mk
