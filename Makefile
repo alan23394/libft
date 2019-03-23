@@ -6,13 +6,13 @@
 #    By: abarnett <alanbarnett328@gmail.com>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/04/17 14:22:04 by abarnett          #+#    #+#              #
-#    Updated: 2019/03/21 12:14:46 by alan             ###   ########.fr        #
+#    Updated: 2019/03/22 21:57:46 by alan             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # **************************************************************************** #
-
 # Configure options
+
 
 NAME :=			libft.a
 CC :=			gcc
@@ -21,20 +21,21 @@ SRC_DIR :=		./srcs
 MODULES_DIR :=	./modules
 
 C_SRCS :=		$(wildcard $(SRC_DIR)/*.c)
-INCLUDE_DIRS :=	-I./includes
+C_SRCS +=		$(wildcard $(SRC_DIR)/ft_put/*.c)
+C_SRCS +=		$(wildcard $(SRC_DIR)/ft_string/*.c)
+C_SRCS +=		$(wildcard $(SRC_DIR)/ft_math/*.c)
+C_SRCS +=		$(wildcard $(SRC_DIR)/ft_printf/*.c)
+C_SRCS +=		$(wildcard $(SRC_DIR)/ft_printf/flags*.c)
+C_SRCS +=		$(wildcard $(SRC_DIR)/ft_list/*.c)
+C_SRCS +=		$(wildcard $(SRC_DIR)/ft_binarytree/*.c)
 
-include $(MODULES_DIR)/ft_put.mk
-include $(MODULES_DIR)/ft_string.mk
-include $(MODULES_DIR)/ft_math.mk
-include $(MODULES_DIR)/ft_printf.mk
-include $(MODULES_DIR)/ft_list.mk
-include $(MODULES_DIR)/ft_binarytree.mk
+INCLUDE_DIRS :=	-I./includes
 
 CFLAGS +=		-g -Wall -Wextra -Werror $(INCLUDE_DIRS)
 
 # **************************************************************************** #
-
 # Don't change below here
+
 
 C_OBJS :=		$(patsubst %.c,%.o,$(C_SRCS))
 DEPENDS :=		$(patsubst %.c,%.d,$(C_SRCS))
