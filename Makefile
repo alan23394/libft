@@ -6,63 +6,47 @@
 #    By: abarnett <alanbarnett328@gmail.com>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/04/17 14:22:04 by abarnett          #+#    #+#              #
-#    Updated: 2019/03/22 22:38:14 by alan             ###   ########.fr        #
+#    Updated: 2019/03/23 04:24:05 by alan             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # **************************************************************************** #
 # Configure options
 
+include config.mk
 
-NAME :=			libft.a
-CC :=			gcc
+NAME :=		libft.a
 
-SRC_DIR :=		./srcs
-MODULES_DIR :=	./modules
+MODULES :=	ft_printf get_next_line
 
-C_SRCS :=		$(wildcard $(SRC_DIR)/ft_utils/*.c)
-C_SRCS +=		$(wildcard $(SRC_DIR)/ft_mem/*.c)
-C_SRCS +=		$(wildcard $(SRC_DIR)/ft_string/*.c)
-C_SRCS +=		$(wildcard $(SRC_DIR)/ft_unicode/*.c)
-C_SRCS +=		$(wildcard $(SRC_DIR)/ft_put/*.c)
-C_SRCS +=		$(wildcard $(SRC_DIR)/ft_printf/*.c)
-C_SRCS +=		$(wildcard $(SRC_DIR)/ft_printf/flags/*.c)
-C_SRCS +=		$(wildcard $(SRC_DIR)/get_next_line/*.c)
-C_SRCS +=		$(wildcard $(SRC_DIR)/ft_math/*.c)
-C_SRCS +=		$(wildcard $(SRC_DIR)/ft_list/*.c)
-C_SRCS +=		$(wildcard $(SRC_DIR)/ft_binarytree/*.c)
-
-INCLUDE_DIRS :=	-I./includes
-
-CFLAGS +=		-g -Wall -Wextra -Werror $(INCLUDE_DIRS)
-
-# **************************************************************************** #
 # Don't change below here
+# **************************************************************************** #
 
+MODULES :=	$(foreach MOD, $(MODULES), $(MODULES_DIR)/$(MOD))
 
-C_OBJS :=		$(patsubst %.c,%.o,$(C_SRCS))
-DEPENDS :=		$(patsubst %.c,%.d,$(C_SRCS))
-
-DEPFLAGS +=		-MMD -MT $@
-
-.PHONY:			all clean fclean re
+.PHONY:		all  modules
 
 all: $(NAME)
-	@ctags -R
+	@ ctags -R
 
-$(NAME): $(C_OBJS)
-	ar rc $(NAME) $(C_OBJS)
-	ranlib $(NAME)
+$(NAME): $(shell find $(SRC_DIR) -name "*.c") | modules
+	@echo -ne "$(COMPILE_COLOR)Creating $(NAME_COLOR)$(NAME) $(DOTS_COLOR)"
+	@ar rc $(NAME) $(shell find $(SRCS) -name "*.o" -print)
+	@echo -n "."
+	@ranlib $(NAME)
+	@echo -n "."
+	@echo -e " $(FINISH_COLOR)done\e[m"
 
-%.o: %.c Makefile
-	$(CC) $(CFLAGS) $(DEPFLAGS) -c $< -o $@
-
--include $(DEPENDS)
+modules:
+	@$(foreach mod, $(MODULES),make --no-print-directory -f $(mod).mk;)
 
 clean:
-	@- $(RM) $(C_OBJS) $(DEPENDS)
+	@$(foreach mod, $(MODULES),make --no-print-directory -f $(mod).mk clean;)
 
 fclean: clean
-	@- $(RM) $(NAME)
+	@echo -e "$(DELETE_COLOR)Deleting $(NAME_COLOR)$(NAME)"
+	@$(RM) $(NAME)
 
-re: fclean all
+re: fclean $(NAME)
+
+#include get_next_line.mk
