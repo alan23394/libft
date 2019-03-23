@@ -6,7 +6,7 @@
 #    By: abarnett <alanbarnett328@gmail.com>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/04/17 14:22:04 by abarnett          #+#    #+#              #
-#    Updated: 2019/03/22 21:57:46 by alan             ###   ########.fr        #
+#    Updated: 2019/03/22 22:38:14 by alan             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,12 +20,15 @@ CC :=			gcc
 SRC_DIR :=		./srcs
 MODULES_DIR :=	./modules
 
-C_SRCS :=		$(wildcard $(SRC_DIR)/*.c)
-C_SRCS +=		$(wildcard $(SRC_DIR)/ft_put/*.c)
+C_SRCS :=		$(wildcard $(SRC_DIR)/ft_utils/*.c)
+C_SRCS +=		$(wildcard $(SRC_DIR)/ft_mem/*.c)
 C_SRCS +=		$(wildcard $(SRC_DIR)/ft_string/*.c)
-C_SRCS +=		$(wildcard $(SRC_DIR)/ft_math/*.c)
+C_SRCS +=		$(wildcard $(SRC_DIR)/ft_unicode/*.c)
+C_SRCS +=		$(wildcard $(SRC_DIR)/ft_put/*.c)
 C_SRCS +=		$(wildcard $(SRC_DIR)/ft_printf/*.c)
-C_SRCS +=		$(wildcard $(SRC_DIR)/ft_printf/flags*.c)
+C_SRCS +=		$(wildcard $(SRC_DIR)/ft_printf/flags/*.c)
+C_SRCS +=		$(wildcard $(SRC_DIR)/get_next_line/*.c)
+C_SRCS +=		$(wildcard $(SRC_DIR)/ft_math/*.c)
 C_SRCS +=		$(wildcard $(SRC_DIR)/ft_list/*.c)
 C_SRCS +=		$(wildcard $(SRC_DIR)/ft_binarytree/*.c)
 
