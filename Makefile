@@ -6,7 +6,7 @@
 #    By: abarnett <alanbarnett328@gmail.com>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/04/17 14:22:04 by abarnett          #+#    #+#              #
-#    Updated: 2019/03/23 18:17:00 by alan             ###   ########.fr        #
+#    Updated: 2019/03/23 18:49:35 by abarnett         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,15 +43,15 @@ all: $(NAME)
 	@- ctags -R
 
 $(NAME): $(shell find $(SRC_DIR) -name "*.c") | modules
-	@- if [ $(QUIET) -eq 0 ]; then echo -ne \
+	@- if [ $(QUIET) -eq 0 ]; then printf \
 		"$(COMPILE_COLOR)Creating $(NAME_COLOR)$(NAME) $(DOTS_COLOR)"; \
 	fi;
 	@ ar rc $(NAME) $(shell find $(SRC_DIR) -name "*.o" -print)
-	@- if [ $(QUIET) -eq 0 ]; then echo -n "."; fi;
+	@- if [ $(QUIET) -eq 0 ]; then printf "."; fi;
 	@ ranlib $(NAME)
-	@- if [ $(QUIET) -eq 0 ]; then echo -n "."; fi;
-	@- if [ $(QUIET) -eq 0 ]; then echo -e \
-		" $(FINISH_COLOR)done$(CLEAR_COLOR)"; \
+	@- if [ $(QUIET) -eq 0 ]; then printf "."; fi;
+	@- if [ $(QUIET) -eq 0 ]; then printf \
+		" $(FINISH_COLOR)done$(CLEAR_COLOR)\n"; \
 	fi;
 
 modules:
@@ -62,8 +62,8 @@ clean:
 
 fclean: clean
 	@- if [ -f $(NAME) ]; then \
-		if [ $(QUIET) -eq 0 ]; then echo -e \
-			"$(DELETE_COLOR)Deleting $(NAME_COLOR)$(NAME)$(CLEAR_COLOR)"; \
+		if [ $(QUIET) -eq 0 ]; then printf \
+			"$(DELETE_COLOR)Deleting $(NAME_COLOR)$(NAME)$(CLEAR_COLOR)\n"; \
 		fi; \
 		$(RM) $(NAME); \
 	fi;
