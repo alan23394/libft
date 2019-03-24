@@ -6,7 +6,7 @@
 #    By: alan <alanbarnett328@gmail.com>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/03/22 23:49:23 by alan              #+#    #+#              #
-#    Updated: 2019/03/23 06:46:55 by alan             ###   ########.fr        #
+#    Updated: 2019/03/23 17:48:52 by alan             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,23 +24,25 @@ DEPENDS :=	$(patsubst %.c,%.d,$(C_SRCS))
 $(NAME): _start $(C_OBJS) _stop
 
 _start:
-	@if [ $(QUIET) -eq 0 ]; then echo -ne\
-		"$(COMPILE_COLOR)Compiling $(NAME_COLOR)$(NAME) $(DOTS_COLOR)";\
-		fi
+	@if [ $(QUIET) -eq 0 ]; then echo -ne \
+		"$(COMPILE_COLOR)Compiling $(NAME_COLOR)$(NAME) $(DOTS_COLOR)"; \
+	fi;
 
 _stop:
-	@if [ $(QUIET) -eq 0 ]; then echo -e\
-		" $(FINISH_COLOR)done$(CLEAR_COLOR)";\
-		fi
+	@if [ $(QUIET) -eq 0 ]; then echo -e \
+		" $(FINISH_COLOR)done$(CLEAR_COLOR)"; \
+	fi;
 
 %.o: %.c
 	@$(CC) $(CFLAGS) -MMD -MT $@ -c $< -o $@
-	@if [ $(QUIET) -eq 0 ]; then echo -n "."; fi
+	@if [ $(QUIET) -eq 0 ]; then echo -n "."; fi;
 
 -include $(DEPENDS)
 
 clean:
-	@if [ $(QUIET) -eq 0 ]; then echo -e\
-		"$(DELETE_COLOR)Cleaning $(NAME_COLOR)$(NAME)$(CLEAR_COLOR)";\
-		fi
-	@$(RM) $(C_OBJS) $(DEPENDS)
+	@if $(foreach FILE, $(C_OBJS),[ -f $(FILE) ] ||) false; then \
+		if [ $(QUIET) -eq 0 ]; then echo -e \
+			"$(DELETE_COLOR)Cleaning $(NAME_COLOR)$(NAME)$(CLEAR_COLOR)"; \
+		fi; \
+		$(RM) $(C_OBJS) $(DEPENDS); \
+	fi;
