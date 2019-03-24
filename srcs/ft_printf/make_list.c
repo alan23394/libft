@@ -6,7 +6,7 @@
 /*   By: abarnett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/09 14:26:02 by abarnett          #+#    #+#             */
-/*   Updated: 2019/03/23 03:06:05 by alan             ###   ########.fr       */
+/*   Updated: 2019/03/23 18:37:56 by abarnett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,6 +104,7 @@ static char		*parse(const char **format, va_list valist, size_t *len)
 	get_width_precis(format, &fmt_struct, valist);
 	get_length(format, &fmt_struct);
 	get_conversion(format, &fmt_struct);
+	str = 0;
 	if (fmt_struct.conv)
 	{
 		str = dispatch(&fmt_struct, valist);
