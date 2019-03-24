@@ -6,7 +6,7 @@
 #    By: abarnett <alanbarnett328@gmail.com>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/04/17 14:22:04 by abarnett          #+#    #+#              #
-#    Updated: 2019/03/23 17:47:34 by alan             ###   ########.fr        #
+#    Updated: 2019/03/23 18:17:00 by alan             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,32 +40,32 @@ MODULES :=	$(foreach MOD, $(MODULES), $(MODULES_DIR)/$(MOD))
 .PHONY:		all modules
 
 all: $(NAME)
-	@ctags -R
+	@- ctags -R
 
 $(NAME): $(shell find $(SRC_DIR) -name "*.c") | modules
-	@if [ $(QUIET) -eq 0 ]; then echo -ne \
+	@- if [ $(QUIET) -eq 0 ]; then echo -ne \
 		"$(COMPILE_COLOR)Creating $(NAME_COLOR)$(NAME) $(DOTS_COLOR)"; \
 	fi;
-	@ar rc $(NAME) $(shell find $(SRC_DIR) -name "*.o" -print)
-	@if [ $(QUIET) -eq 0 ]; then echo -n "."; fi;
-	@ranlib $(NAME)
-	@if [ $(QUIET) -eq 0 ]; then echo -n "."; fi;
-	@if [ $(QUIET) -eq 0 ]; then echo -e \
+	@ ar rc $(NAME) $(shell find $(SRC_DIR) -name "*.o" -print)
+	@- if [ $(QUIET) -eq 0 ]; then echo -n "."; fi;
+	@ ranlib $(NAME)
+	@- if [ $(QUIET) -eq 0 ]; then echo -n "."; fi;
+	@- if [ $(QUIET) -eq 0 ]; then echo -e \
 		" $(FINISH_COLOR)done$(CLEAR_COLOR)"; \
 	fi;
 
 modules:
-	@$(foreach MOD, $(MODULES),make --no-print-directory -f $(MOD).mk;)
+	@ $(foreach MOD, $(MODULES),make --no-print-directory -f $(MOD).mk;)
 
 clean:
-	@$(foreach MOD, $(MODULES),make --no-print-directory -f $(MOD).mk clean;)
+	@ $(foreach MOD, $(MODULES),make --no-print-directory -f $(MOD).mk clean;)
 
 fclean: clean
-	@if [ -f $(NAME) ]; then \
+	@- if [ -f $(NAME) ]; then \
 		if [ $(QUIET) -eq 0 ]; then echo -e \
-			"$(DELETE_COLOR)Deleting $(NAME_COLOR)$(NAME)$(CLEAR_COLOR)";\
-		fi;\
-		$(RM) $(NAME);\
+			"$(DELETE_COLOR)Deleting $(NAME_COLOR)$(NAME)$(CLEAR_COLOR)"; \
+		fi; \
+		$(RM) $(NAME); \
 	fi;
 
 re: fclean $(NAME)
