@@ -6,7 +6,7 @@
 /*   By: abarnett <alanbarnett328@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/22 00:16:22 by abarnett          #+#    #+#             */
-/*   Updated: 2019/01/22 16:00:32 by abarnett         ###   ########.fr       */
+/*   Updated: 2019/03/24 20:28:09 by abarnett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void			ft_treedel(t_binarytree **tree, void (*del)())
 		}
 		if ((*tree)->right)
 		{
-			ft_treedel(&(*tree)->left, del);
+			ft_treedel(&(*tree)->right, del);
 		}
 		ft_treedelone(tree, del);
 	}
