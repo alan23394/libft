@@ -6,7 +6,7 @@
 /*   By: abarnett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/23 12:15:00 by abarnett          #+#    #+#             */
-/*   Updated: 2019/03/19 00:11:22 by alan             ###   ########.fr       */
+/*   Updated: 2019/03/28 21:10:58 by abarnett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@
 #include "ft_list.h"
 #include <unistd.h>
 
-# define BUFF_SIZE 128
+#define BUFF_SIZE 128
 
-# define FD(cur) (((t_gnl_file *)(cur->content))->fd)
-# define BUF(cur) (((t_gnl_file *)(cur->content))->buf)
+#define FD(cur) (((t_gnl_file *)(cur->content))->fd)
+#define BUF(cur) (((t_gnl_file *)(cur->content))->buf)
 
 static t_list	*get_fd(t_list *head, int fd)
 {
@@ -49,7 +49,6 @@ static t_list	*get_fd(t_list *head, int fd)
 	}
 	return (0);
 }
-
 
 static char		*stresize(char **buf, int start, size_t size)
 {

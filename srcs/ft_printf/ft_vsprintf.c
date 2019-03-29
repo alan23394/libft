@@ -6,7 +6,7 @@
 /*   By: alan <alanbarnett328@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/20 13:38:35 by alan              #+#    #+#             */
-/*   Updated: 2019/03/20 15:26:49 by alan             ###   ########.fr       */
+/*   Updated: 2019/03/28 21:13:54 by abarnett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 ** Free the list
 */
 
-int		ft_vsprintf(char **str, const char *format, va_list	valist)
+int		ft_vsprintf(char **str, const char *format, va_list valist)
 {
 	t_list		*strings;
 	size_t		total_len;

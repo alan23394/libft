@@ -6,7 +6,7 @@
 /*   By: abarnett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/26 10:06:41 by abarnett          #+#    #+#             */
-/*   Updated: 2019/03/03 03:56:47 by alan             ###   ########.fr       */
+/*   Updated: 2019/03/28 21:19:58 by abarnett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,3 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 	head->content_size = content_size;
 	return (head);
 }
-

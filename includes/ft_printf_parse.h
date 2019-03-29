@@ -6,7 +6,7 @@
 /*   By: alan <alanbarnett328@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/20 13:45:50 by alan              #+#    #+#             */
-/*   Updated: 2019/03/20 15:25:46 by alan             ###   ########.fr       */
+/*   Updated: 2019/03/28 21:21:07 by abarnett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 # include <stdarg.h>
 # include <stddef.h>
 
-typedef struct	s_format t_format;
-typedef struct	s_list t_list;
+typedef struct s_format	t_format;
+typedef struct s_list	t_list;
 
 void			get_conversion(const char **format, t_format *fmt_struct);
 void			get_length(const char **format, t_format *fmt_struct);

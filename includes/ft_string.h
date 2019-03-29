@@ -6,7 +6,7 @@
 /*   By: alan <alanbarnett328@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/03 03:13:31 by alan              #+#    #+#             */
-/*   Updated: 2019/03/18 12:39:11 by alan             ###   ########.fr       */
+/*   Updated: 2019/03/28 21:20:25 by abarnett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ char	*ft_strncpy(char *dst, const char *src, size_t len);
 
 char	*ft_strdup(const char *s1);
 char	*ft_strndup(const char *s1, size_t len);
-
 
 void	ft_striter(char*s, void (*f)(char *));
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
