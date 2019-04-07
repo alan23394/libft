@@ -6,7 +6,7 @@
 #    By: abarnett <alanbarnett328@gmail.com>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/04/17 14:22:04 by abarnett          #+#    #+#              #
-#    Updated: 2019/03/23 18:49:35 by abarnett         ###   ########.fr        #
+#    Updated: 2019/04/05 15:13:39 by alan             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,7 @@ NAME :=		libft.a
 MODULES :=	ft_utils\
 			ft_mem\
 			ft_string\
+			ft_darr\
 			ft_unicode\
 			ft_put\
 			ft_printf\
