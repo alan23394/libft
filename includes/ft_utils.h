@@ -6,7 +6,7 @@
 /*   By: alan <alanbarnett328@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/18 09:02:51 by alan              #+#    #+#             */
-/*   Updated: 2019/03/18 12:36:29 by alan             ###   ########.fr       */
+/*   Updated: 2019/04/07 16:51:54 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ size_t	ft_numlen(long long num);
 size_t	ft_unumlen(unsigned long long num);
 size_t	ft_numlen_base(long long num, int base);
 size_t	ft_unumlen_base(unsigned long long num, int base);
-int		ft_count_words(const char *str, char del);
 
 int		ft_atoi(char *str);
 char	*ft_itoa(int n);
