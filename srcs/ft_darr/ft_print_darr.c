@@ -6,7 +6,7 @@
 /*   By: alan <alanbarnett328@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/05 15:09:35 by alan              #+#    #+#             */
-/*   Updated: 2019/04/05 15:11:25 by alan             ###   ########.fr       */
+/*   Updated: 2019/04/07 14:13:46 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ void	ft_print_darr(char **darr)
 {
 	int	i;
 
+	i = 0;
 	while (darr[i])
 	{
 		ft_printf("%s\n", darr[i]);
