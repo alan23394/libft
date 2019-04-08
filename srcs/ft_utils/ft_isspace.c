@@ -6,9 +6,14 @@
 /*   By: abarnett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/21 06:09:29 by abarnett          #+#    #+#             */
-/*   Updated: 2019/03/18 09:03:44 by alan             ###   ########.fr       */
+/*   Updated: 2019/04/07 15:39:28 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+** Returns 1 if c is a space character (by ascii value).
+** Should not return 1 if c is 0.
+*/
 
 int	ft_isspace(int c)
 {
