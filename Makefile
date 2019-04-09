@@ -6,7 +6,7 @@
 #    By: abarnett <alanbarnett328@gmail.com>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/04/17 14:22:04 by abarnett          #+#    #+#              #
-#    Updated: 2019/04/07 16:17:33 by alan             ###   ########.fr        #
+#    Updated: 2019/04/08 01:54:54 by alan             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,7 +57,7 @@ $(NAME): $(shell find $(SRC_DIR) -name "*.c") | modules
 	fi;
 
 modules:
-	@ $(foreach MOD, $(MODULES),make --no-print-directory -f $(MOD).mk;)
+	@ $(foreach MOD, $(MODULES),make --no-print-directory -f $(MOD).mk && )true
 
 clean:
 	@ $(foreach MOD, $(MODULES),make --no-print-directory -f $(MOD).mk clean;)
