@@ -6,12 +6,12 @@
 /*   By: abarnett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/22 21:14:13 by abarnett          #+#    #+#             */
-/*   Updated: 2019/04/07 16:54:14 by alan             ###   ########.fr       */
+/*   Updated: 2019/04/07 22:51:15 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_string.h"
-#include "ft_word.h"
+#include "ft_utils.h"
 #include "ft_mem.h"
 
 char	**ft_strsplit(const char *s, char c)
@@ -22,7 +22,7 @@ char	**ft_strsplit(const char *s, char c)
 
 	if (!s)
 		return (0);
-	count = ft_wordcount(s, c);
+	count = ft_count_del(s, c);
 	words = (char **)ft_memalloc(sizeof(char *) * (count + 1));
 	if (!words)
 		return (0);
