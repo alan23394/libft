@@ -6,7 +6,7 @@
 /*   By: alan <alanbarnett328@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/18 09:02:51 by alan              #+#    #+#             */
-/*   Updated: 2019/04/07 16:51:54 by alan             ###   ########.fr       */
+/*   Updated: 2019/04/07 22:52:28 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int		ft_isascii(int c);
 int		ft_isprint(int c);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
+int		ft_count_del(const char *str, char del);
 size_t	ft_numlen(long long num);
 size_t	ft_unumlen(unsigned long long num);
 size_t	ft_numlen_base(long long num, int base);
