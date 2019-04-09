@@ -1,23 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_darr.h                                          :+:      :+:    :+:   */
+/*   ft_delete_darr.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alan <alanbarnett328@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/05 15:01:41 by alan              #+#    #+#             */
-/*   Updated: 2019/04/08 05:47:01 by alan             ###   ########.fr       */
+/*   Created: 2019/04/07 23:45:56 by alan              #+#    #+#             */
+/*   Updated: 2019/04/07 23:48:39 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_DARR
-# define FT_DARR
+#include "ft_mem.h"
 
-void		ft_delete_darr(void **darr);
-int			ft_count_strings(const char **darr);
-void		ft_print_darr(const char **darr);
-const char	**ft_dup_darr(const char **darr);
-const char	**ft_darradd(const char ***darr, const char *add);
-const char	**ft_darrrm_i(const char ***darr, int i);
+/*
+** This function deletes a null-terminated double array. It uses memdel on each
+** pointer of the array. It assumes the last item of the array is null.
+*/
 
-#endif
+void	ft_delete_darr(void **darr)
+{
+	int	i;
+
+	if (!darr)
+		return ;
+	i = 0;
+	while (darr[i])
+	{
+		ft_memdel((void **)&darr[i]);
+		++i;
+	}
+	ft_memdel((void **)&darr);
+}

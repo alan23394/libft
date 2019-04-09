@@ -6,13 +6,13 @@
 /*   By: alan <alanbarnett328@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/05 15:09:35 by alan              #+#    #+#             */
-/*   Updated: 2019/04/07 14:13:46 by alan             ###   ########.fr       */
+/*   Updated: 2019/04/08 05:14:02 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_print_darr(char **darr)
+void	ft_print_darr(const char **darr)
 {
 	int	i;
 
