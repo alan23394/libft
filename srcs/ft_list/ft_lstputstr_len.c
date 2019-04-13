@@ -6,7 +6,7 @@
 /*   By: alan <alanbarnett328@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/03 03:03:57 by alan              #+#    #+#             */
-/*   Updated: 2019/03/03 03:52:08 by alan             ###   ########.fr       */
+/*   Updated: 2019/04/12 21:42:23 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "ft_list.h"
 
 /*
-** Same as ft_lstputstr, except it will print a specific length
+** Same as ft_lstputstr, except it will print only the length of content_size
 */
 
 void	ft_lstputstr_len(t_list *item)
