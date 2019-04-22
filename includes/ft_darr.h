@@ -6,12 +6,12 @@
 /*   By: alan <alanbarnett328@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/05 15:01:41 by alan              #+#    #+#             */
-/*   Updated: 2019/04/08 05:47:01 by alan             ###   ########.fr       */
+/*   Updated: 2019/04/22 05:00:00 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_DARR
-# define FT_DARR
+#ifndef FT_DARR_H
+# define FT_DARR_H
 
 void		ft_delete_darr(void **darr);
 int			ft_count_strings(const char **darr);
