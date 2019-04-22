@@ -6,7 +6,7 @@
 #    By: abarnett <alanbarnett328@gmail.com>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/04/17 14:22:04 by abarnett          #+#    #+#              #
-#    Updated: 2019/04/08 01:54:54 by alan             ###   ########.fr        #
+#    Updated: 2019/04/22 05:22:28 by alan             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,8 @@ MODULES :=	ft_utils\
 			get_next_line\
 			ft_math\
 			ft_list\
-			ft_binarytree
+			ft_binarytree\
+			ft_conv
 
 # Don't change below here
 # **************************************************************************** #
