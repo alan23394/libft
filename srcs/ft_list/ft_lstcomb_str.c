@@ -6,7 +6,7 @@
 /*   By: alan <alanbarnett328@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/20 13:56:22 by alan              #+#    #+#             */
-/*   Updated: 2019/03/20 13:57:48 by alan             ###   ########.fr       */
+/*   Updated: 2019/04/24 05:46:09 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ char			*ft_lstcomb_str(t_list *list, int size_of_list)
 	char	*cur;
 	t_list	*lcur;
 
+	if (!list)
+		return (0);
 	newstr = ft_strnew(size_of_list);
 	cur = newstr;
 	lcur = list;
