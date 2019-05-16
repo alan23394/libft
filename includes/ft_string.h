@@ -6,7 +6,7 @@
 /*   By: alan <alanbarnett328@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/03 03:13:31 by alan              #+#    #+#             */
-/*   Updated: 2019/04/23 04:29:36 by alan             ###   ########.fr       */
+/*   Updated: 2019/05/15 16:28:09 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ void	ft_strdel(char **as);
 
 size_t	ft_strlen(const char *str);
 size_t	ft_dstrlen(const char *str, char del);
+
+int		ft_str_is_num(const char *str);
 
 char	*ft_strchr(const char *s, int c);
 char	*ft_strchr_end(const char *s, int c);
