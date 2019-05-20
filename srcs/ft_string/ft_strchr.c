@@ -6,13 +6,15 @@
 /*   By: abarnett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/14 20:46:24 by abarnett          #+#    #+#             */
-/*   Updated: 2019/03/18 07:53:43 by alan             ###   ########.fr       */
+/*   Updated: 2019/05/16 15:05:13 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strchr(const char *s, int c)
 {
-	while (s && *s)
+	if (!s)
+		return (0);
+	while (*s)
 	{
 		if (*s == (char)c)
 			return ((char *)(s));
