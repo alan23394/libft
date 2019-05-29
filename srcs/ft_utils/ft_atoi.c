@@ -6,13 +6,13 @@
 /*   By: abarnett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/21 06:08:58 by abarnett          #+#    #+#             */
-/*   Updated: 2019/03/18 09:10:35 by alan             ###   ########.fr       */
+/*   Updated: 2019/05/28 21:47:47 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_utils.h"
 
-int	ft_atoi(char *str)
+int	ft_atoi(const char *str)
 {
 	int	i;
 	int	flag;
