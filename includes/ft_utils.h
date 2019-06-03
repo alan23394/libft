@@ -6,7 +6,7 @@
 /*   By: alan <alanbarnett328@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/18 09:02:51 by alan              #+#    #+#             */
-/*   Updated: 2019/05/28 21:48:07 by alan             ###   ########.fr       */
+/*   Updated: 2019/06/02 23:43:47 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,7 @@ size_t		ft_unumlen_base(unsigned long long num, int base);
 int			ft_atoi(const char *str);
 char		*ft_itoa(int n);
 char		*ft_itoa_base(int n, int base);
+
+const char	*get_path_filename(const char *path);
 
 #endif
