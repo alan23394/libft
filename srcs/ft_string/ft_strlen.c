@@ -6,12 +6,11 @@
 /*   By: abarnett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/18 12:09:46 by abarnett          #+#    #+#             */
-/*   Updated: 2019/04/17 12:02:13 by alan             ###   ########.fr       */
+/*   Updated: 2019/06/09 01:26:45 by abarnett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
-#include "libft_safety.h"
 
 #ifdef LIBFT_SAFE
 

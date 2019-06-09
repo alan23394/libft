@@ -6,7 +6,7 @@
 #    By: alan <alanbarnett328@gmail.com>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/03/23 01:51:49 by alan              #+#    #+#              #
-#    Updated: 2019/03/23 06:50:17 by alan             ###   ########.fr        #
+#    Updated: 2019/06/09 01:27:11 by abarnett         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ INCLUDE :=			$(foreach DIR, $(INCLUDE), -I$(DIR))
 
 # Compiler and flags
 CC :=				gcc
-CFLAGS +=			-g -Wall -Wextra -Werror $(INCLUDE)
+CFLAGS +=			-g -Wall -Wextra -Werror -DLIBFT_SAFE $(INCLUDE)
 
 # Colors
 COMPILE_COLOR :=	\e[1;32m
