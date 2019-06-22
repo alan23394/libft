@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr_beg.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abarnett <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: alan <alanbarnett328@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/14 20:49:13 by abarnett          #+#    #+#             */
-/*   Updated: 2019/06/20 21:46:09 by alan             ###   ########.fr       */
+/*   Created: 2019/06/20 21:19:20 by alan              #+#    #+#             */
+/*   Updated: 2019/06/20 21:40:33 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strrchr(const char *s, char c)
-{
-	int	i;
+#include "ft_string.h"
 
-	i = 0;
-	if (!s)
-		return (0);
-	while (s[i])
-		++i;
-	while (i >= 0)
-	{
-		if (s[i] == (char)c)
-			return ((char *)&s[i]);
-		--i;
-	}
-	return (0);
+char	*ft_strrchr_beg(const char *s, char c)
+{
+	char	*cur;
+
+	cur = ft_strrchr(s, c);
+	if (!cur)
+		return ((char *)s);
+	return (cur);
 }

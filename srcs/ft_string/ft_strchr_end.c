@@ -6,7 +6,7 @@
 /*   By: alan <alanbarnett328@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/23 04:27:12 by alan              #+#    #+#             */
-/*   Updated: 2019/04/23 04:32:27 by alan             ###   ########.fr       */
+/*   Updated: 2019/06/20 21:38:34 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,13 @@
 ** instead of null.
 */
 
-char	*ft_strchr_end(const char *s, int c)
+char	*ft_strchr_end(const char *s, char c)
 {
-	while (s && *s)
+	if (!s)
+		return (0);
+	while (*s)
 	{
-		if (*s == (char)c)
+		if (*s == c)
 			return ((char *)(s));
 		++s;
 	}

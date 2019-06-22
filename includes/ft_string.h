@@ -6,7 +6,7 @@
 /*   By: alan <alanbarnett328@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/03 03:13:31 by alan              #+#    #+#             */
-/*   Updated: 2019/05/16 14:28:52 by alan             ###   ########.fr       */
+/*   Updated: 2019/06/20 21:56:39 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,13 @@ size_t	ft_dstrlen(const char *str, char del);
 
 int		ft_str_is_num(const char *str);
 
-char	*ft_strchr(const char *s, int c);
-char	*ft_strchr_end(const char *s, int c);
-char	*ft_strchr_i(const char *s, int c);
-char	*ft_strchr_i_end(const char *s, int c);
-char	*ft_strrchr(const char *s, int c);
+char	*ft_strchr(const char *s, char c);
+char	*ft_strchr_end(const char *s, char c);
+int		ft_strchr_i(const char *s, char c);
+int		ft_strchr_i_end(const char *s, char c);
+char	*ft_strrchr(const char *s, char c);
+char	*ft_strrchr_beg(const char *s, char c);
+int		ft_strrchr_i(const char *s, char c);
 
 char	*ft_strstr(const char *haystack, const char *needle);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);

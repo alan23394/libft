@@ -6,7 +6,7 @@
 /*   By: alan <alanbarnett328@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/16 14:28:15 by alan              #+#    #+#             */
-/*   Updated: 2019/05/16 14:28:28 by alan             ###   ########.fr       */
+/*   Updated: 2019/06/20 21:39:48 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 ** string.
 */
 
-int	ft_strchr_i_end(const char *s, int c)
+int	ft_strchr_i_end(const char *s, char c)
 {
 	int	i;
 

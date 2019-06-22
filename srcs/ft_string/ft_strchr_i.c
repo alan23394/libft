@@ -6,7 +6,7 @@
 /*   By: alan <alanbarnett328@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/16 14:17:43 by alan              #+#    #+#             */
-/*   Updated: 2019/05/16 14:28:37 by alan             ###   ########.fr       */
+/*   Updated: 2019/06/20 21:39:39 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 ** If no such character is found, it returns -1.
 */
 
-int	ft_strchr_i(const char *s, int c)
+int	ft_strchr_i(const char *s, char c)
 {
 	int	i;
 
@@ -25,9 +25,9 @@ int	ft_strchr_i(const char *s, int c)
 		return (0);
 	while (s[i])
 	{
-		if (s[i] == (char)c)
+		if (s[i] == c)
 			return (i);
 		++i;
 	}
-	return ((char)c == '\0' ? i : -1);
+	return (c == '\0' ? i : -1);
 }
