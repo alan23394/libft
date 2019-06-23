@@ -6,7 +6,7 @@
 /*   By: alan <alanbarnett328@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/08 05:22:59 by alan              #+#    #+#             */
-/*   Updated: 2019/04/08 05:46:46 by alan             ###   ########.fr       */
+/*   Updated: 2019/06/23 00:16:45 by abarnett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ const char	**ft_darrrm_i(const char ***darr, int i)
 	new_darr = (const char **)ft_memalloc(sizeof(const char *) * (len + 1));
 	if (!new_darr)
 		return (0);
+	ft_memdel((void **)&(*darr)[i]);
 	new_darr[len] = 0;
 	while (len > 0)
 	{
