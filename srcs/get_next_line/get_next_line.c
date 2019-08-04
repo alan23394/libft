@@ -6,7 +6,7 @@
 /*   By: abarnett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/23 12:15:00 by abarnett          #+#    #+#             */
-/*   Updated: 2019/03/28 21:10:58 by abarnett         ###   ########.fr       */
+/*   Updated: 2019/08/03 21:15:18 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include "ft_list.h"
 #include <unistd.h>
 
-#define BUFF_SIZE 128
+#define BUFF_SIZE 4096
 
 #define FD(cur) (((t_gnl_file *)(cur->content))->fd)
 #define BUF(cur) (((t_gnl_file *)(cur->content))->buf)
