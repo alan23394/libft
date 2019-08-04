@@ -6,7 +6,7 @@
 #    By: abarnett <alanbarnett328@gmail.com>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/04/17 14:22:04 by abarnett          #+#    #+#              #
-#    Updated: 2019/08/03 21:51:22 by alan             ###   ########.fr        #
+#    Updated: 2019/08/03 22:17:06 by alan             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,7 +63,7 @@ $(NAME): $(shell find $(SRC_DIR) -name "*.c") | modules
 		" $(FINISH_COLOR)done$(CLEAR_COLOR)\n"; \
 	fi;
 
-$(NAME_SO): $(shell find $(SRC_DIR) -name "*.c") | modules
+$(NAME_SO): $(shell find $(SRC_DIR) -name "*.c") | modules_so
 	@- if [ $(QUIET) -eq 0 ]; then printf \
 		"$(COMPILE_COLOR)Creating $(NAME_COLOR)$(NAME_SO) $(DOTS_COLOR)"; \
 	fi;

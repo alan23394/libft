@@ -6,7 +6,7 @@
 #    By: alan <alanbarnett328@gmail.com>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/03/22 23:49:23 by alan              #+#    #+#              #
-#    Updated: 2019/03/23 18:49:52 by abarnett         ###   ########.fr        #
+#    Updated: 2019/08/03 22:17:20 by alan             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,12 @@
 C_OBJS :=	$(patsubst %.c,%.o,$(C_SRCS))
 DEPENDS :=	$(patsubst %.c,%.d,$(C_SRCS))
 
-.PHONY:		$(NAME) _start _stop clean
+.PHONY:		all so $(NAME) _start _stop clean
+
+all: $(NAME)
+
+so: CFLAGS += -fPIC
+so: $(NAME)
 
 $(NAME): _start $(C_OBJS) _stop
 
