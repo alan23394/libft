@@ -6,7 +6,7 @@
 /*   By: abarnett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/21 21:38:40 by abarnett          #+#    #+#             */
-/*   Updated: 2019/03/20 15:42:53 by alan             ###   ########.fr       */
+/*   Updated: 2019/05/04 08:46:09 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@
 **		add your function name and character to the jump table in make_list.c.
 */
 
-void	get_conversion(const char **format, t_format *fmt_struct)
+void		get_conversion(const char **format, t_format *fmt_struct)
 {
 	const char	*flags;
 	char		*index;
@@ -90,7 +90,7 @@ void	get_conversion(const char **format, t_format *fmt_struct)
 **	If the length "hh" or "ll" is used, it is replaced with "H" or "L".
 */
 
-void	get_length(const char **format, t_format *fmt_struct)
+void		get_length(const char **format, t_format *fmt_struct)
 {
 	const char	*flags;
 	const char	*index;
@@ -115,6 +115,22 @@ void	get_length(const char **format, t_format *fmt_struct)
 }
 
 /*
+** This function pulls an int out of the valist. If it's less than 0, it sets
+** it to 0. This is to be used to get the * value for precision or width, and
+** they aren't supposed to be negative.
+*/
+
+static int	get_star_from_valist(va_list valist)
+{
+	int		star;
+
+	star = va_arg(valist, int);
+	if (star < 0)
+		star = 0;
+	return (star);
+}
+
+/*
 **	This function uses atoi to grab the number for width and precision.
 **	It checks if there is a star for both, and gets the number from the valist
 **	if there is a star in either place.
@@ -127,13 +143,13 @@ void	get_length(const char **format, t_format *fmt_struct)
 **	that checks if atoi was able to pull one.
 */
 
-void	get_width_precis(const char **format, t_format *fmt_struct,
+void		get_width_precis(const char **format, t_format *fmt_struct,
 			va_list valist)
 {
 	if (**format)
 	{
 		if (**format == '*' && ++(*format))
-			fmt_struct->width = va_arg(valist, int);
+			fmt_struct->width = get_star_from_valist(valist);
 		else if (ft_isdigit(**format))
 		{
 			fmt_struct->width = ft_atoi(*(char **)format);
@@ -145,7 +161,7 @@ void	get_width_precis(const char **format, t_format *fmt_struct,
 	{
 		++(*format);
 		if (**format == '*' && ++(*format))
-			fmt_struct->precision = va_arg(valist, int);
+			fmt_struct->precision = get_star_from_valist(valist);
 		else if (ft_isdigit(**format))
 		{
 			fmt_struct->precision = ft_atoi(*(char **)format);
@@ -169,7 +185,7 @@ void	get_width_precis(const char **format, t_format *fmt_struct,
 **	The second to last line disables the ' ' flag if the + flag is also present.
 */
 
-void	get_flags(const char **format, t_format *fmt_struct)
+void		get_flags(const char **format, t_format *fmt_struct)
 {
 	const char		*flags;
 	const char		*cur;
