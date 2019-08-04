@@ -6,7 +6,7 @@
 #    By: alan <alanbarnett328@gmail.com>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/03/23 01:51:49 by alan              #+#    #+#              #
-#    Updated: 2019/06/09 01:27:11 by abarnett         ###   ########.fr        #
+#    Updated: 2019/08/03 22:25:34 by alan             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ INCLUDE :=			$(foreach DIR, $(INCLUDE), -I$(DIR))
 
 # Compiler and flags
 CC :=				gcc
-CFLAGS +=			-g -Wall -Wextra -Werror -DLIBFT_SAFE $(INCLUDE)
+CFLAGS +=			-Wall -Wextra -Werror $(INCLUDE)
 
 # Colors
 COMPILE_COLOR :=	\e[1;32m
@@ -38,3 +38,9 @@ DOTS_COLOR :=		\e[1;35m
 FINISH_COLOR :=		\e[1;36m
 DELETE_COLOR :=		\e[1;31m
 CLEAR_COLOR :=		\e[m
+
+.PHONY: so debug
+
+# Compiler flag options
+so: CFLAGS += -fPIC
+debug: CFLAGS += -g

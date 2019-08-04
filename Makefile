@@ -6,7 +6,7 @@
 #    By: abarnett <alanbarnett328@gmail.com>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/04/17 14:22:04 by abarnett          #+#    #+#              #
-#    Updated: 2019/04/22 05:22:28 by alan             ###   ########.fr        #
+#    Updated: 2019/08/03 21:51:22 by alan             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,8 @@ include config.mk
 
 # Name of output library
 NAME :=		libft.a
+NAME_SO :=	libft.so.1.0.0
+SONAME :=	libft.so.1
 
 # Modules to compile
 MODULES :=	ft_utils\
@@ -40,9 +42,13 @@ MODULES :=	ft_utils\
 # Attach module dir to each module
 MODULES :=	$(foreach MOD, $(MODULES), $(MODULES_DIR)/$(MOD))
 
-.PHONY:		all modules
+.PHONY:		all so modules modules_so
 
-all: $(NAME)
+all: tags $(NAME)
+
+so: tags $(NAME_SO)
+
+tags: $(shell find $(SRC_DIR) -name "*.c" -print)
 	@- ctags -R
 
 $(NAME): $(shell find $(SRC_DIR) -name "*.c") | modules
@@ -57,8 +63,23 @@ $(NAME): $(shell find $(SRC_DIR) -name "*.c") | modules
 		" $(FINISH_COLOR)done$(CLEAR_COLOR)\n"; \
 	fi;
 
+$(NAME_SO): $(shell find $(SRC_DIR) -name "*.c") | modules
+	@- if [ $(QUIET) -eq 0 ]; then printf \
+		"$(COMPILE_COLOR)Creating $(NAME_COLOR)$(NAME_SO) $(DOTS_COLOR)"; \
+	fi;
+	@ gcc -shared -Wl,-soname,$(SONAME) -o $(NAME_SO) \
+		$(shell find $(SRC_DIR) -name "*.o" -print)
+	@- if [ $(QUIET) -eq 0 ]; then printf "."; fi;
+	@- if [ $(QUIET) -eq 0 ]; then printf \
+		" $(FINISH_COLOR)done$(CLEAR_COLOR)\n"; \
+	fi;
+
 modules:
 	@ $(foreach MOD, $(MODULES),make --no-print-directory -f $(MOD).mk && )true
+
+modules_so:
+	@ $(foreach MOD, $(MODULES),\
+		make --no-print-directory -f $(MOD).mk so && )true
 
 clean:
 	@ $(foreach MOD, $(MODULES),make --no-print-directory -f $(MOD).mk clean;)
@@ -69,6 +90,12 @@ fclean: clean
 			"$(DELETE_COLOR)Deleting $(NAME_COLOR)$(NAME)$(CLEAR_COLOR)\n"; \
 		fi; \
 		$(RM) $(NAME); \
+	fi
+	@- if [ -f $(NAME_SO) ]; then \
+		if [ $(QUIET) -eq 0 ]; then printf \
+			"$(DELETE_COLOR)Deleting $(NAME_COLOR)$(NAME_SO)$(CLEAR_COLOR)\n"; \
+		fi; \
+		$(RM) $(NAME_SO); \
 	fi;
 
 re: fclean $(NAME)
