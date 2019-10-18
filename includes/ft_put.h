@@ -6,7 +6,7 @@
 /*   By: alan <alanbarnett328@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/03 03:10:40 by alan              #+#    #+#             */
-/*   Updated: 2019/03/03 03:33:49 by alan             ###   ########.fr       */
+/*   Updated: 2019/10/17 11:54:04 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 ** better than having duplicated code for each one
 */
 
-void	ft_putchar(char c);
+int		ft_putchar(int c);
 void	ft_putstr(const char *str);
 void	ft_putendl(const char *s);
 void	ft_putnbr(int n);
