@@ -6,7 +6,7 @@
 /*   By: alan <alanbarnett328@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/03 00:59:54 by alan              #+#    #+#             */
-/*   Updated: 2019/03/18 12:26:17 by alan             ###   ########.fr       */
+/*   Updated: 2019/10/18 04:41:36 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,10 @@ typedef	struct		s_fp
 
 # define SIG_F (f.lead_zeros + f.len_f)
 # define SIG_I (f.len_i + f.trail_zeros)
+
+# define FT_MAX(a, b) ((a) > (b) ? (a) : (b))
+# define FT_MIN(a, b) ((a) < (b) ? (a) : (b))
+# define FT_ABS(a) ((a) > 0 ? (a) : (a) * -1)
 
 int					ft_max(int a, int b);
 int					ft_min(int a, int b);
