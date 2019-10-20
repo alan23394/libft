@@ -6,12 +6,12 @@
 /*   By: alan <alanbarnett328@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 17:30:27 by alan              #+#    #+#             */
-/*   Updated: 2019/10/19 22:13:49 by alan             ###   ########.fr       */
+/*   Updated: 2019/10/20 01:11:37 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_queue.h"
 #include "ft_node.h"
+#include "ft_queue.h"
 
 void			ft_queue_append(struct s_queue *queue, void *content)
 {
