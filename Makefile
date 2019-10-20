@@ -6,7 +6,7 @@
 #    By: abarnett <alanbarnett328@gmail.com>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/04/17 14:22:04 by abarnett          #+#    #+#              #
-#    Updated: 2019/08/03 22:17:06 by alan             ###   ########.fr        #
+#    Updated: 2019/10/20 00:54:51 by alan             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,8 +32,10 @@ MODULES :=	ft_utils\
 			ft_printf\
 			get_next_line\
 			ft_math\
+			ft_node\
 			ft_list\
 			ft_binarytree\
+			ft_queue\
 			ft_conv
 
 # Don't change below here
