@@ -33,9 +33,11 @@ MODULES :=	ft_utils\
 			get_next_line\
 			ft_math\
 			ft_node\
+			ft_dnode\
 			ft_list\
 			ft_binarytree\
 			ft_queue\
+			ft_dqueue\
 			ft_conv
 
 # Don't change below here
