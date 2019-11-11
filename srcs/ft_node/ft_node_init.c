@@ -11,13 +11,13 @@
 /* ************************************************************************** */
 
 #include "ft_node.h"
-#include <stdlib.h>
+#include "ft_mem.h"
 
 struct s_node	*ft_node_init(void *content, struct s_node *next)
 {
 	struct s_node	*new_node;
 
-	new_node = (struct s_node *)malloc(sizeof(struct s_node));
+	new_node = (struct s_node *)ft_memalloc(sizeof(struct s_node));
 	if (!new_node)
 		return (0);
 	new_node->content = content;
