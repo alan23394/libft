@@ -6,7 +6,7 @@
 /*   By: alan <alanbarnett328@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/20 13:38:35 by alan              #+#    #+#             */
-/*   Updated: 2019/03/28 21:13:54 by abarnett         ###   ########.fr       */
+/*   Updated: 2019/10/24 21:36:15 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int		ft_vsprintf(char **str, const char *format, va_list valist)
 
 	strings = 0;
 	total_len = make_list(&strings, format, valist);
-	*str = ft_lstcomb_str(strings, total_len);
+	*str = ft_lstcomb_str(strings, total_len + 1);
 	ft_lstdel(&strings, ft_lstmemdel);
 	return (total_len);
 }
