@@ -37,7 +37,6 @@ MODULES :=	ft_utils\
 			ft_list\
 			ft_binarytree\
 			ft_queue\
-			ft_dqueue\
 			ft_conv
 
 # Don't change below here
