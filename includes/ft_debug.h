@@ -6,7 +6,7 @@
 /*   By: alan <alanbarnett328@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/16 06:52:56 by alan              #+#    #+#             */
-/*   Updated: 2019/11/16 07:42:57 by alan             ###   ########.fr       */
+/*   Updated: 2019/11/16 08:47:15 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,9 @@
 # ifdef DEBUG_PRINT_ON
 
 #  include "ft_printf.h"
+#  include <unistd.h>
 
-#  define ERROR_FORMAT(str) "(%s:%s): %s\n", __FILE__, __func__, str
+#  define ERROR_FORMAT(str) "libft_debug(%s:%s): %s\n", __FILE__, __func__, str
 #  define PRINT_DEBUG(str) ft_printfd(STDERR_FILENO, ERROR_FORMAT(str))
 
 # else
