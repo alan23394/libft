@@ -6,7 +6,7 @@
 #    By: abarnett <alanbarnett328@gmail.com>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/04/17 14:22:04 by abarnett          #+#    #+#              #
-#    Updated: 2019/11/12 03:29:32 by alan             ###   ########.fr        #
+#    Updated: 2019/11/16 06:58:50 by alan             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,6 +39,7 @@ MODULES :=	ft_utils\
 			ft_queue\
 			ft_iter\
 			ft_conv\
+			ft_term\
 			ft_termcaps
 
 # Don't change below here
