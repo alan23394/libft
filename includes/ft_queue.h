@@ -6,13 +6,14 @@
 /*   By: alan <alanbarnett328@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 17:29:38 by alan              #+#    #+#             */
-/*   Updated: 2019/10/25 15:40:52 by alan             ###   ########.fr       */
+/*   Updated: 2019/11/17 06:12:06 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_QUEUE_H
 # define FT_QUEUE_H
 
+# include "ft_node.h"
 # include <stddef.h>
 
 struct	s_queue
