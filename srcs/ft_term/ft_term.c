@@ -68,11 +68,8 @@ int						init_terms(void (setup_new_term(struct termios *term)))
 		ft_memdel((void **)terms);
 		return (1);
 	}
-	PRINT_DEBUG("Saved old terminal attributes");
 	ft_memcpy(&(terms->new_term), &(terms->old_term), sizeof(struct termios));
-	PRINT_DEBUG("Duplicated old attributes to new attributes");
 	setup_new_term(&(terms->new_term));
-	PRINT_DEBUG("New terminal has been set up");
 	(void)terminal_store(&terms);
 	return (0);
 }
@@ -92,7 +89,6 @@ void					delete_terms(void)
 	if (terms)
 	{
 		ft_memdel((void **)&terms);
-		PRINT_DEBUG("Deleted terminals successfully.");
 		terminal_store(&terms);
 	}
 }
