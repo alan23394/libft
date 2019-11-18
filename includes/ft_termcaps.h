@@ -6,13 +6,14 @@
 /*   By: alan <alanbarnett328@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/28 16:11:23 by alan              #+#    #+#             */
-/*   Updated: 2019/11/07 07:54:19 by alan             ###   ########.fr       */
+/*   Updated: 2019/11/18 12:15:56 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_TERMCAPS_H
 # define FT_TERMCAPS_H
 
+# define TC_CLEAR "cl"
 # define TC_ENABLE_ALT_SCREEN "ti"
 # define TC_DISABLE_ALT_SCREEN "te"
 # define TC_CURSOR_INVISIBLE "vi"
