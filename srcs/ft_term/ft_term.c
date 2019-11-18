@@ -44,12 +44,14 @@ static struct s_terms	*terminal_store(struct s_terms *terms)
 ** Parameter is a function pointer who will be passed the new struct termios,
 ** and should make all changes to the new terminal that you would like for your
 ** application. The new terminal is not applied, you must do that with
-** ft_term_switch_new().
+** ft_term_switch_new(). This is a void function, I imagine it doesn't do
+** enough by itself to warrant checking for failure. If I change my mind later,
+** it'll be easy to add.
 **
 ** Returns 0 on success, 1 on failure.
 */
 
-int						init_terms(int (setup_new_term(struct termios *term)))
+int						init_terms(void (setup_new_term(struct termios *term)))
 {
 	struct s_terms	*terms;
 
@@ -67,11 +69,7 @@ int						init_terms(int (setup_new_term(struct termios *term)))
 	PRINT_DEBUG("Saved old terminal attributes");
 	ft_memcpy(&(terms->new_term), &(terms->old_term), sizeof(struct termios));
 	PRINT_DEBUG("Duplicated old attributes to new attributes");
-	if (setup_new_term(&(terms->new_term)) != 0)
-	{
-		PRINT_DEBUG("New term setup function failed");
-		return (1);
-	}
+	setup_new_term(&(terms->new_term));
 	PRINT_DEBUG("New terminal has been set up");
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: alan <alanbarnett328@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/15 23:03:56 by alan              #+#    #+#             */
-/*   Updated: 2019/11/16 07:20:08 by alan             ###   ########.fr       */
+/*   Updated: 2019/11/18 14:50:06 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ struct	s_terms
 	struct termios	new_term;
 };
 
-int		init_terms(int (setup_new_term(struct termios *term)));
+int		init_terms(void (setup_new_term(struct termios *term)));
 void	delete_terms(void);
 int		ft_term_switch_old(void);
 int		ft_term_switch_new(void);
