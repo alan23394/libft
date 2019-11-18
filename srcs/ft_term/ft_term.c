@@ -27,14 +27,14 @@
 ** If you pass in NULL, it will return a pointer the internal struct.
 */
 
-static struct s_terms	*terminal_store(struct s_terms *terms)
+static struct s_terms	*terminal_store(struct s_terms **terms)
 {
 	static struct s_terms	*hold = 0;
 
 	if (!terms)
 		return (hold);
 	else
-		hold = terms;
+		hold = *terms;
 	return (0);
 }
 
@@ -48,7 +48,9 @@ static struct s_terms	*terminal_store(struct s_terms *terms)
 ** enough by itself to warrant checking for failure. If I change my mind later,
 ** it'll be easy to add.
 **
-** Returns 0 on success, 1 on failure.
+** Returns 0 on success, 1 on failure. If it failed, all allocated memory will
+** be freed. I assume you'd want to quit the program if the terminal couldn't
+** have it's attributes recieved.
 */
 
 int						init_terms(void (setup_new_term(struct termios *term)))
@@ -60,10 +62,10 @@ int						init_terms(void (setup_new_term(struct termios *term)))
 	{
 		return (0);
 	}
-	(void)terminal_store(terms);
 	if (tcgetattr(STDIN_FILENO, &(terms->old_term)) != 0)
 	{
 		PRINT_DEBUG("tcgetattr failed");
+		ft_memdel((void **)terms);
 		return (1);
 	}
 	PRINT_DEBUG("Saved old terminal attributes");
@@ -71,11 +73,15 @@ int						init_terms(void (setup_new_term(struct termios *term)))
 	PRINT_DEBUG("Duplicated old attributes to new attributes");
 	setup_new_term(&(terms->new_term));
 	PRINT_DEBUG("New terminal has been set up");
+	(void)terminal_store(&terms);
 	return (0);
 }
 
 /*
 ** Frees the terminal in the terminal_store, if it exists.
+** Once freed, it resets the terminal holder to the address of the terms
+** variable (since ft_memdel set terms to 0, this effectively clears the
+** holder).
 */
 
 void					delete_terms(void)
@@ -87,6 +93,7 @@ void					delete_terms(void)
 	{
 		ft_memdel((void **)&terms);
 		PRINT_DEBUG("Deleted terminals successfully.");
+		terminal_store(&terms);
 	}
 }
 
