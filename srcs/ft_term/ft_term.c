@@ -6,7 +6,7 @@
 /*   By: alan <alanbarnett328@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/15 23:03:27 by alan              #+#    #+#             */
-/*   Updated: 2019/11/16 07:38:02 by alan             ###   ########.fr       */
+/*   Updated: 2019/11/18 11:59:23 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,12 @@ void					delete_terms(void)
 	}
 }
 
+/*
+** This function tries to use tcsetattr to flash the old terminal settings.
+** It returns -1 if there are no terminal settings saved.
+** It returns 1 if tcsetattr fails.
+** It returns 0 on success.
+*/
 
 int						ft_term_switch_old(void)
 {
@@ -100,7 +106,7 @@ int						ft_term_switch_old(void)
 	terms = terminal_store(0);
 	if (!terms)
 	{
-		return (1);
+		return (-1);
 	}
 	if (tcsetattr(STDIN_FILENO, TCSAFLUSH, &(terms->old_term)) != 0)
 	{
@@ -110,6 +116,13 @@ int						ft_term_switch_old(void)
 	return (0);
 }
 
+/*
+** This function tries to use tcsetattr to flash the new terminal settings.
+** It returns -1 if there are no terminal settings saved.
+** It returns 1 if tcsetattr fails.
+** It returns 0 on success.
+*/
+
 int						ft_term_switch_new(void)
 {
 	struct s_terms	*terms;
@@ -117,7 +130,7 @@ int						ft_term_switch_new(void)
 	terms = terminal_store(0);
 	if (!terms)
 	{
-		return (1);
+		return (-1);
 	}
 	if (tcsetattr(STDIN_FILENO, TCSAFLUSH, &(terms->new_term)) != 0)
 	{
