@@ -6,7 +6,7 @@
 /*   By: alan <alanbarnett328@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/28 14:57:54 by alan              #+#    #+#             */
-/*   Updated: 2019/11/12 03:31:03 by alan             ###   ########.fr       */
+/*   Updated: 2019/11/17 06:39:40 by abarnett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 ** about it's return code.
 */
 
-int		ft_tc_put(const char *tc)
+int		ft_tc_put(char *tc)
 {
 	char	*termcaps_str;
 
@@ -37,7 +37,7 @@ int		ft_tc_put(const char *tc)
 ** Returns a number from tgetnum using the passed termcap code
 */
 
-int		ft_tc_getnum(const char *tc)
+int		ft_tc_getnum(char *tc)
 {
 	return (tgetnum(tc));
 }
@@ -46,7 +46,7 @@ int		ft_tc_getnum(const char *tc)
 ** Returns a string from tgetstr using the passed termcap code
 */
 
-char	*ft_tc_getstr(const char *tc)
+char	*ft_tc_getstr(char *tc)
 {
 	return (tgetstr(tc, 0));
 }

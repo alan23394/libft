@@ -6,7 +6,7 @@
 /*   By: alan <alanbarnett328@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/28 16:11:23 by alan              #+#    #+#             */
-/*   Updated: 2019/11/18 12:15:56 by alan             ###   ########.fr       */
+/*   Updated: 2019/11/19 08:45:21 by abarnett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ int		ft_tc_setup(void);
 
 int		ft_tc_putchar(int c);
 
-int		ft_tc_put(const char *tc);
-int		ft_tc_getnum(const char *tc);
-char	*ft_tc_getstr(const char *tc);
+int		ft_tc_put(char *tc);
+int		ft_tc_getnum(char *tc);
+char	*ft_tc_getstr(char *tc);
 
 int		ft_tc_cols(void);
 int		ft_tc_lines(void);
