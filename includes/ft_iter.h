@@ -6,7 +6,7 @@
 /*   By: alan <alanbarnett328@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/25 16:32:53 by alan              #+#    #+#             */
-/*   Updated: 2019/10/25 20:56:26 by alan             ###   ########.fr       */
+/*   Updated: 2019/11/22 16:58:03 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,8 @@ void			ft_iter_add_tail(struct s_iter *iter,
 					void *content, size_t size);
 void			ft_iter_cnext(struct s_iter *iter);
 void			ft_iter_cprev(struct s_iter *iter);
+void			*ft_iter_rm_cur(struct s_iter *iter);
+void			*ft_iter_rm_head(struct s_iter *iter);
+void			*ft_iter_rm_tail(struct s_iter *iter);
 
 #endif
