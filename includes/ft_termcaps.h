@@ -6,7 +6,7 @@
 /*   By: alan <alanbarnett328@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/28 16:11:23 by alan              #+#    #+#             */
-/*   Updated: 2019/11/19 08:45:21 by abarnett         ###   ########.fr       */
+/*   Updated: 2019/11/25 22:30:58 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,9 @@
 # define TC_CURSOR_MOVE "cm"
 # define TC_LINES "li"
 # define TC_COLS "co"
+
+# define TCSTR_ENABLE_MOUSE_CLICK "\e[?1000h"
+# define TCSTR_DISABLE_MOUSE_CLICK "\e[?1000l"
 
 int		ft_tc_setup(void);
 
