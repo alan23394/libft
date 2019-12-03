@@ -6,7 +6,7 @@
 /*   By: abarnett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/23 12:15:00 by abarnett          #+#    #+#             */
-/*   Updated: 2019/08/03 21:15:18 by alan             ###   ########.fr       */
+/*   Updated: 2019/12/03 15:39:54 by abarnett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,6 @@
 
 #define BUFF_SIZE 4096
 
-#define FD(cur) (((t_gnl_file *)(cur->content))->fd)
-#define BUF(cur) (((t_gnl_file *)(cur->content))->buf)
-
 static t_list	*get_fd(t_list *head, int fd)
 {
 	t_gnl_file	*file;
@@ -30,19 +27,19 @@ static t_list	*get_fd(t_list *head, int fd)
 		file = new_gnl_file(fd);
 		head = ft_lstnew(file, sizeof(t_gnl_file));
 		if (head && head->content)
-			BUF(head) = ft_strnew(BUFF_SIZE);
+			((t_gnl_file *)head->content)->buf = ft_strnew(BUFF_SIZE);
 		ft_memdel((void **)&file);
 	}
 	while (head && head->content)
 	{
-		if (FD(head) == fd)
+		if (((t_gnl_file *)head->content)->fd == fd)
 			return (head);
 		if (!head->next)
 		{
 			file = new_gnl_file(fd);
 			head->next = ft_lstnew(file, sizeof(t_gnl_file));
 			if (head->next && head->next->content)
-				BUF(head->next) = ft_strnew(BUFF_SIZE);
+				((t_gnl_file *)head->next->content)->buf = ft_strnew(BUFF_SIZE);
 			ft_memdel((void **)&file);
 		}
 		head = head->next;
@@ -64,16 +61,16 @@ static char		*stresize(char **buf, int start, size_t size)
 	return (new);
 }
 
-static int		process_line(t_list *cur, int ret, char **line)
+static int		process_line(t_gnl_file *file, int ret, char **line)
 {
 	char	*newline_cur;
 	int		new_strlen;
 
-	newline_cur = ft_strchr(BUF(cur), '\n');
-	new_strlen = newline_cur - BUF(cur);
+	newline_cur = ft_strchr(file->buf, '\n');
+	new_strlen = newline_cur - file->buf;
 	if (!newline_cur && !ret)
 	{
-		*line = stresize(&BUF(cur), 0, 0);
+		*line = stresize(&file->buf, 0, 0);
 		if (!*line)
 			return (-1);
 		if (!**line)
@@ -84,9 +81,9 @@ static int		process_line(t_list *cur, int ret, char **line)
 		*line = ft_strnew(new_strlen);
 	if (!*line)
 		return (-1);
-	*line = ft_strncpy(*line, BUF(cur), new_strlen);
-	BUF(cur) = stresize(&BUF(cur), new_strlen + 1, 0);
-	if (!*line || !BUF(cur))
+	*line = ft_strncpy(*line, file->buf, new_strlen);
+	file->buf = stresize(&file->buf, new_strlen + 1, 0);
+	if (!*line || !file->buf)
 		return (-1);
 	return (1);
 }
@@ -94,26 +91,26 @@ static int		process_line(t_list *cur, int ret, char **line)
 int				get_next_line(const int fd, char **line)
 {
 	static t_list	*head;
-	t_list			*cur;
+	t_gnl_file		*file;
 	int				ret;
 
 	if (read(fd, 0, 0) == -1 || !line)
 		return (-1);
 	if (!head && !(head = get_fd(0, fd)))
 		return (-1);
-	if (!(cur = get_fd(head, fd)))
+	if (!(file = get_fd(head, fd)->content))
 		return (-1);
-	if (!BUF(cur))
+	if (!file->buf)
 		return (0);
 	ret = 1;
-	while (!ft_strchr(BUF(cur), '\n') && ret > 0)
+	while (!ft_strchr(file->buf, '\n') && ret > 0)
 	{
-		BUF(cur) = stresize(&BUF(cur), 0, BUFF_SIZE);
-		if (!BUF(cur))
+		file->buf = stresize(&file->buf, 0, BUFF_SIZE);
+		if (!file->buf)
 			return (-1);
-		ret = read(fd, (BUF(cur) + ft_strlen(BUF(cur))), BUFF_SIZE);
+		ret = read(fd, (file->buf + ft_strlen(file->buf)), BUFF_SIZE);
 		if (ret < 0)
 			return (-1);
 	}
-	return (process_line(cur, ret, line));
+	return (process_line(file, ret, line));
 }
