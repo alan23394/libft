@@ -6,7 +6,7 @@
 /*   By: alan <alanbarnett328@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/25 16:32:53 by alan              #+#    #+#             */
-/*   Updated: 2019/11/22 16:58:03 by alan             ###   ########.fr       */
+/*   Updated: 2019/12/03 16:13:53 by abarnett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 struct s_dnode;
 
-struct s_iter
+struct			s_iter
 {
 	struct s_dnode	*head;
 	struct s_dnode	*tail;

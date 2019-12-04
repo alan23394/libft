@@ -6,7 +6,7 @@
 /*   By: alan <alanbarnett328@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 17:28:59 by alan              #+#    #+#             */
-/*   Updated: 2019/10/25 15:35:19 by alan             ###   ########.fr       */
+/*   Updated: 2019/12/03 16:14:46 by abarnett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <stddef.h>
 
-struct	s_node
+struct			s_node
 {
 	void			*content;
 	size_t			content_size;

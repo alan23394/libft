@@ -6,7 +6,7 @@
 /*   By: alan <alanbarnett328@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 17:29:38 by alan              #+#    #+#             */
-/*   Updated: 2019/11/17 06:12:06 by alan             ###   ########.fr       */
+/*   Updated: 2019/12/03 16:15:29 by abarnett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include "ft_node.h"
 # include <stddef.h>
 
-struct	s_queue
+struct			s_queue
 {
 	struct s_node	*first;
 	struct s_node	*last;

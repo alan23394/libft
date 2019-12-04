@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_term_setup.c                                    :+:      :+:    :+:   */
+/*   interactive_term_setup.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alan <alanbarnett328@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/24 00:12:37 by alan              #+#    #+#             */
-/*   Updated: 2019/11/24 00:18:32 by alan             ###   ########.fr       */
+/*   Updated: 2019/12/03 15:43:49 by abarnett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 
 void	interactive_term_setup(struct termios *term)
 {
-	term->c_lflag &= ~(ICANON|ECHO);
+	term->c_lflag &= ~(ICANON | ECHO);
 	term->c_cc[VMIN] = 1;
 	term->c_cc[VTIME] = 0;
 }

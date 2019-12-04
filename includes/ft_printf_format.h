@@ -6,7 +6,7 @@
 /*   By: alan <alanbarnett328@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/19 02:00:08 by alan              #+#    #+#             */
-/*   Updated: 2019/03/20 14:01:22 by alan             ###   ########.fr       */
+/*   Updated: 2019/12/03 16:33:40 by abarnett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,15 @@
 
 # define CONVS "cCsS%dDiuUboOxXpfFeE"
 
-typedef struct		s_format
+typedef struct	s_format
 {
 	unsigned char	flags;
 	int				width;
 	int				precision;
 	char			length;
 	char			conv;
-}					t_format;
+}				t_format;
 
-void				format_init(t_format *fmt);
+void			format_init(t_format *fmt);
 
 #endif
