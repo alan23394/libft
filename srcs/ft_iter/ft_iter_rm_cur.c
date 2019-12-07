@@ -6,7 +6,7 @@
 /*   By: alan <alanbarnett328@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/22 16:40:38 by alan              #+#    #+#             */
-/*   Updated: 2019/11/22 16:50:50 by alan             ###   ########.fr       */
+/*   Updated: 2019/12/05 22:22:19 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ void	*ft_iter_rm_cur(struct s_iter *iter)
 	void			*retptr;
 	struct s_dnode	*rmptr;
 
+	if (ft_iter_isempty(iter))
+		return (0);
 	if (iter->cur == iter->head)
 		return (ft_iter_rm_head(iter));
 	else if (iter->cur == iter->tail)
