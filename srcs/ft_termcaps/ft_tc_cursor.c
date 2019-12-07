@@ -6,7 +6,7 @@
 /*   By: alan <alanbarnett328@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 07:20:40 by alan              #+#    #+#             */
-/*   Updated: 2019/11/07 07:53:56 by alan             ###   ########.fr       */
+/*   Updated: 2019/12/05 23:03:05 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_tc_cursor_move(unsigned int line, unsigned int col)
 	termcaps_str = tgetstr(TC_CURSOR_MOVE, 0);
 	if (!termcaps_str)
 		return (1);
-	termcaps_str = tparm(termcaps_str, line, col);
+	termcaps_str = tgoto(termcaps_str, col, line);
 	tputs(termcaps_str, 1, ft_tc_putchar);
 	return (0);
 }
