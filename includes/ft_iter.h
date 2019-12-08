@@ -6,7 +6,7 @@
 /*   By: alan <alanbarnett328@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/25 16:32:53 by alan              #+#    #+#             */
-/*   Updated: 2019/12/05 22:13:08 by alan             ###   ########.fr       */
+/*   Updated: 2019/12/08 02:04:08 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,17 @@ struct			s_iter
 };
 
 struct s_iter	*ft_iter_init(void);
+
+void			ft_iter_del(struct s_iter **iter, void (*del)(void *, size_t));
+void			ft_iter_memdel(void *content, size_t content_size);
+
 int				ft_iter_isempty(struct s_iter *iter);
+
 void			ft_iter_add_head(struct s_iter *iter,
 					void *content, size_t size);
 void			ft_iter_add_tail(struct s_iter *iter,
 					void *content, size_t size);
+
 void			ft_iter_cnext(struct s_iter *iter);
 void			ft_iter_cprev(struct s_iter *iter);
 
