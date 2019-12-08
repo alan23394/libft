@@ -32,6 +32,9 @@ void			ft_iter_add_tail(struct s_iter *iter,
 					void *content, size_t size);
 void			ft_iter_cnext(struct s_iter *iter);
 void			ft_iter_cprev(struct s_iter *iter);
+
+struct s_dnode	*ft_iter_pop_head(struct s_iter *iter);
+
 void			*ft_iter_rm_cur(struct s_iter *iter);
 void			*ft_iter_rm_head(struct s_iter *iter);
 void			*ft_iter_rm_tail(struct s_iter *iter);
