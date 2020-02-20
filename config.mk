@@ -30,9 +30,4 @@ CC :=				gcc
 CFLAGS +=			-Wall -Wextra -Werror $(INCLUDE)
 
 # Colors
-COMPILE_COLOR :=	\e[1;32m
-NAME_COLOR :=		\e[1;33m
-DOTS_COLOR :=		\e[1;35m
-FINISH_COLOR :=		\e[1;36m
-DELETE_COLOR :=		\e[1;31m
-CLEAR_COLOR :=		\e[m
+include colors/default.mk
