@@ -6,7 +6,7 @@
 #    By: abarnett <alanbarnett328@gmail.com>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/04/17 14:22:04 by abarnett          #+#    #+#              #
-#    Updated: 2019/11/16 06:58:50 by alan             ###   ########.fr        #
+#    Updated: 2020/02/16 00:20:09 by abarnett         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,6 @@ NAME :=		libft.a
 NAME_SO :=	libft.so.1.0.0
 SONAME :=	libft.so.1
 
-# Modules to compile
 MODULES :=	ft_utils\
 			ft_mem\
 			ft_string\
@@ -45,10 +44,16 @@ MODULES :=	ft_utils\
 # Don't change below here
 # **************************************************************************** #
 
-# Attach module dir to each module
-MODULES :=	$(foreach MOD, $(MODULES), $(MODULES_DIR)/$(MOD))
+# Add a fake directory component that indicates what we want to do
+# Get rid of it when passing it on with $(@F) (uses filename component of $@)
+MODULES_SO :=		$(foreach MOD,$(MODULES),so/$(MOD))
+MODULES_CLEAN :=	$(foreach MOD,$(MODULES),clean/$(MOD))
+MODULES_DEPS :=		$(foreach MOD,$(MODULES),$(SRC_DIR)/$(MOD)/deps.mk)
 
-.PHONY:		all so modules modules_so
+# Variable for compiling modules
+MAKE_MODULE :=		$(MAKE) -f compile_module.mk
+
+.PHONY:		all so $(MODULES) $(MODULES_SO) $(MODULES_CLEAN) clean fclean re
 
 all: tags $(NAME)
 
@@ -57,7 +62,7 @@ so: tags $(NAME_SO)
 tags: $(shell find $(SRC_DIR) -name "*.c" -print)
 	@- ctags -R
 
-$(NAME): $(shell find $(SRC_DIR) -name "*.c") | modules
+$(NAME): $(MODULES)
 	@- if [ $(QUIET) -eq 0 ]; then printf \
 		"$(COMPILE_COLOR)Creating $(NAME_COLOR)$(NAME) $(DOTS_COLOR)"; \
 	fi;
@@ -69,7 +74,7 @@ $(NAME): $(shell find $(SRC_DIR) -name "*.c") | modules
 		" $(FINISH_COLOR)done$(CLEAR_COLOR)\n"; \
 	fi;
 
-$(NAME_SO): $(shell find $(SRC_DIR) -name "*.c") | modules_so
+$(NAME_SO): $(MODULES_SO)
 	@- if [ $(QUIET) -eq 0 ]; then printf \
 		"$(COMPILE_COLOR)Creating $(NAME_COLOR)$(NAME_SO) $(DOTS_COLOR)"; \
 	fi;
@@ -80,15 +85,19 @@ $(NAME_SO): $(shell find $(SRC_DIR) -name "*.c") | modules_so
 		" $(FINISH_COLOR)done$(CLEAR_COLOR)\n"; \
 	fi;
 
-modules:
-	@ $(foreach MOD, $(MODULES),make --no-print-directory -f $(MOD).mk && )true
+-include $(MODULES_DEPS)
 
-modules_so:
-	@ $(foreach MOD, $(MODULES),\
-		make --no-print-directory -f $(MOD).mk so && )true
+$(MODULES):
+	@ NAME=$@ $(MAKE_MODULE)
 
-clean:
-	@ $(foreach MOD, $(MODULES),make --no-print-directory -f $(MOD).mk clean;)
+$(MODULES_SO):
+	@ NAME=$(@F) $(MAKE_MODULE) so
+
+$(MODULES_CLEAN):
+	@ NAME=$(@F) $(MAKE_MODULE) clean
+
+clean: $(MODULES_CLEAN)
+	@ $(RM) tags
 
 fclean: clean
 	@- if [ -f $(NAME) ]; then \
@@ -104,4 +113,4 @@ fclean: clean
 		$(RM) $(NAME_SO); \
 	fi;
 
-re: fclean $(NAME)
+re: fclean all

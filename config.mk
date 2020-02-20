@@ -6,7 +6,7 @@
 #    By: alan <alanbarnett328@gmail.com>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/03/23 01:51:49 by alan              #+#    #+#              #
-#    Updated: 2019/08/03 22:25:47 by alan             ###   ########.fr        #
+#    Updated: 2020/02/19 23:03:12 by abarnett         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,8 +21,6 @@ QUIET :=			0
 SRC_DIR :=			./srcs
 # Directories to include
 INCLUDE :=			./includes
-# Location of makefile modules
-MODULES_DIR :=		./modules
 
 # Add a -I on each INCLUDE
 INCLUDE :=			$(foreach DIR, $(INCLUDE), -I$(DIR))
