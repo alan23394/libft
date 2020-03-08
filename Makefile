@@ -6,7 +6,7 @@
 #    By: abarnett <alanbarnett328@gmail.com>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/04/17 14:22:04 by abarnett          #+#    #+#              #
-#    Updated: 2020/02/16 00:20:09 by abarnett         ###   ########.fr        #
+#    Updated: 2020/03/07 00:46:33 by abarnett         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,7 @@ MODULES :=	ft_utils\
 			ft_mem\
 			ft_string\
 			ft_word\
+			ft_parse\
 			ft_darr\
 			ft_unicode\
 			ft_put\
