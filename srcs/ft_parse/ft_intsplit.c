@@ -6,7 +6,7 @@
 /*   By: abarnett <alanbarnett328@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/05 02:00:43 by abarnett          #+#    #+#             */
-/*   Updated: 2020/03/07 00:45:35 by abarnett         ###   ########.fr       */
+/*   Updated: 2020/04/16 00:00:14 by alan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,5 @@ int	*ft_intsplit(const char *s, int *size)
 		ints[i] = ft_parse_num(&s);
 		i++;
 	}
-	ints[i] = 0;
 	return (ints);
 }
