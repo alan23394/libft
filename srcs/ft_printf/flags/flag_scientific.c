@@ -6,14 +6,14 @@
 /*   By: alan <alanbarnett328@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/05 18:47:36 by alan              #+#    #+#             */
-/*   Updated: 2019/03/20 11:50:18 by alan             ###   ########.fr       */
+/*   Updated: 2020/04/29 11:59:32 by abarnett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf_format.h"
 #include "ft_utils.h"
 #include "ft_string.h"
-#include "ft_math.h"
+#include "ft_utils.h"
 #include <stdarg.h>
 
 /*
@@ -61,7 +61,7 @@ char			*flag_scientific(t_format *fmt, va_list valist)
 	nb = get_nb(fmt->length, valist);
 	if (fmt->precision == -1)
 		fmt->precision = 6;
-	str = ft_ftosn(nb, fmt->precision);
+	str = ft_itoa((int)nb);
 	len = ft_strlen(str);
 	if (fmt->width > len)
 		str = addspaces(&str, fmt->width - len, fmt->flags & MINUS);

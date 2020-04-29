@@ -6,13 +6,13 @@
 /*   By: alan <alanbarnett328@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/15 14:24:01 by alan              #+#    #+#             */
-/*   Updated: 2019/03/19 02:06:41 by alan             ###   ########.fr       */
+/*   Updated: 2020/04/29 11:58:09 by abarnett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf_format.h"
 #include "ft_string.h"
-#include "ft_math.h"
+#include "ft_utils.h"
 #include <stdarg.h>
 
 /*
@@ -60,7 +60,7 @@ char			*flag_float(t_format *fmt, va_list valist)
 	nb = get_nb(fmt->length, valist);
 	if (fmt->precision == -1)
 		fmt->precision = 6;
-	str = ft_ftoa(nb, fmt->precision);
+	str = ft_itoa((int)nb);
 	len = ft_strlen(str);
 	if (fmt->width > len)
 		str = addspaces(&str, fmt->width - len, fmt->flags & MINUS);

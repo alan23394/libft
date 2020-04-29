@@ -6,31 +6,12 @@
 /*   By: alan <alanbarnett328@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/03 00:59:54 by alan              #+#    #+#             */
-/*   Updated: 2019/12/03 16:14:35 by abarnett         ###   ########.fr       */
+/*   Updated: 2020/04/29 11:55:13 by abarnett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_MATH_H
 # define FT_MATH_H
-
-typedef union	u_double
-{
-	double	d;
-	long	l;
-}				t_double;
-
-typedef	struct	s_fp
-{
-	long	integral;
-	long	fraction;
-	int		len_i;
-	int		trail_zeros;
-	int		lead_zeros;
-	int		len_f;
-}				t_fp;
-
-# define SIG_F (f.lead_zeros + f.len_f)
-# define SIG_I (f.len_i + f.trail_zeros)
 
 int				ft_max(int a, int b);
 int				ft_min(int a, int b);
@@ -47,8 +28,5 @@ int				ft_floor(double roundee);
 int				ft_ceil(double roundee);
 
 long			ft_round(double roundee);
-
-char			*ft_ftoa(double nb, int precision);
-char			*ft_ftosn(double nb, int precision);
 
 #endif

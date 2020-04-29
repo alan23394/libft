@@ -6,12 +6,11 @@
 /*   By: alan <alanbarnett328@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/15 23:03:27 by alan              #+#    #+#             */
-/*   Updated: 2019/11/18 11:59:23 by alan             ###   ########.fr       */
+/*   Updated: 2020/04/29 12:02:38 by abarnett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_term.h"
-#include "ft_debug.h"
 #include "ft_mem.h"
 
 /*
@@ -64,7 +63,6 @@ int						init_terms(void (setup_new_term(struct termios *term)))
 	}
 	if (tcgetattr(STDIN_FILENO, &(terms->old_term)) != 0)
 	{
-		PRINT_DEBUG("tcgetattr failed");
 		ft_memdel((void **)terms);
 		return (1);
 	}
@@ -111,7 +109,6 @@ int						ft_term_switch_old(void)
 	}
 	if (tcsetattr(STDIN_FILENO, TCSAFLUSH, &(terms->old_term)) != 0)
 	{
-		PRINT_DEBUG("tcsetattr failed");
 		return (1);
 	}
 	return (0);
@@ -135,7 +132,6 @@ int						ft_term_switch_new(void)
 	}
 	if (tcsetattr(STDIN_FILENO, TCSAFLUSH, &(terms->new_term)) != 0)
 	{
-		PRINT_DEBUG("tcsetattr failed");
 		return (1);
 	}
 	return (0);
